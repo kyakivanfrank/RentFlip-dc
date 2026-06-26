@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Plus Jakarta Sans, sans-serif; background: #F4F2F8; }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:#F4F2F8; font-family:Plus Jakarta Sans, sans-serif; color:#16121F; padding-bottom:80px;">
+
+  <!-- ===== HEADER ===== -->
+  <div style="background:linear-gradient(135deg,#9E72D8 0%,#7C4FB8 55%,#6E43AC 100%); padding:54px 56px 60px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:radial-gradient(90% 120% at 85% -10%, rgba(255,255,255,.22), transparent 55%);"></div>
+    <div style="position:relative; max-width:1120px; margin:0 auto;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <div style="width:46px; height:46px; border-radius:14px; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px -8px rgba(0,0,0,.3);">
+          <img src="assets/logo-rentflip-mark.svg" style="width:24px; height:27px; display:block;">
+        </div>
+        <div style="font-size:15px; font-weight:700; letter-spacing:4px; color:rgba(255,255,255,.85); text-transform:uppercase;">Design System</div>
+      </div>
+      <div style="font-size:52px; font-weight:800; color:#fff; letter-spacing:-1.5px; margin-top:22px;">RentFlip</div>
+      <div style="font-size:19px; font-weight:500; color:rgba(255,255,255,.92); margin-top:10px; max-width:560px; line-height:1.55;">The visual language behind a tenant–landlord rent platform — derived from the product and documented so every screen stays consistent.</div>
+      <div style="display:flex; gap:10px; margin-top:26px; flex-wrap:wrap;">
+        <div style="padding:8px 16px; border-radius:99px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:#fff; font-size:13px; font-weight:600;">Plus Jakarta Sans</div>
+        <div style="padding:8px 16px; border-radius:99px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:#fff; font-size:13px; font-weight:600;">Dual-role accents</div>
+        <div style="padding:8px 16px; border-radius:99px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:#fff; font-size:13px; font-weight:600;">Soft, rounded geometry</div>
+        <div style="padding:8px 16px; border-radius:99px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); color:#fff; font-size:13px; font-weight:600;">Lucide-style icons</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1120px; margin:0 auto; padding:0 56px;">
+
+    <!-- ===== BRAND ===== -->
+    <div style="margin-top:54px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">01 — Brand</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Identity & principle</div>
+      <div style="display:grid; grid-template-columns:1.3fr 1fr; gap:22px; margin-top:24px;">
+        <div style="background:#fff; border-radius:20px; padding:34px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div style="width:64px; height:64px; border-radius:18px; background:#F4EEFB; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 1px #EADDF7;">
+              <img src="assets/logo-rentflip-mark.svg" style="width:38px; height:42px; display:block;">
+            </div>
+            <div>
+              <div style="font-size:30px; font-weight:800; color:#16121F; letter-spacing:-.5px;">RentFlip</div>
+              <div style="font-size:15px; color:#6E6880; margin-top:2px;">Easy tenant–landlord relationships</div>
+            </div>
+          </div>
+          <div style="height:1px; background:#ECEAF1; margin:26px 0;"></div>
+          <div style="font-size:15px; line-height:1.7; color:#3A2F4D;">The mark is two interlocking forms — rent flipping between tenant and landlord — in brand purple and deep indigo. Place it on white or light surfaces for full contrast. Always pair with the Plus Jakarta Sans wordmark; never stretch or recolour the glyph.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:22px;">
+          <div style="flex:1; background:#814BC4; border-radius:20px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; min-height:120px;">
+            <div style="width:48px; height:48px; border-radius:14px; background:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 20px -8px rgba(0,0,0,.35);"><img src="assets/logo-rentflip-mark.svg" style="width:25px; height:28px; display:block;"></div>
+            <div style="font-size:13px; font-weight:600; color:rgba(255,255,255,.8);">App icon on purple</div>
+          </div>
+          <div style="flex:1; background:#fff; border:1px solid #ECEAF1; border-radius:20px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; min-height:120px;">
+            <img src="assets/logo-rentflip-mark.svg" style="width:30px; height:33px; display:block;">
+            <div style="font-size:13px; font-weight:600; color:#9A95A8;">On white</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COLOR ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">02 — Color</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Palette</div>
+      <div style="font-size:15px; color:#6E6880; margin-top:8px; max-width:620px; line-height:1.6;">Purple leads everything. The two role accents — purple for landlords, amber for tenants — let one app feel like two without changing layout. Semantic colours carry payment status.</div>
+
+      <sc-for list="{{ palette }}" as="group" hint-placeholder-count="4">
+        <div style="margin-top:28px;">
+          <div style="font-size:13px; font-weight:700; color:#3A2F4D; margin-bottom:12px;">{{ group.name }}</div>
+          <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:14px;">
+            <sc-for list="{{ group.colors }}" as="c" hint-placeholder-count="6">
+              <div style="border-radius:18px; overflow:hidden; box-shadow:0 6px 18px -14px rgba(40,25,70,.5); border:1px solid #ECEAF1;">
+                <div style="height:78px; background:{{ c.hex }};"></div>
+                <div style="padding:10px 12px; background:#fff;">
+                  <div style="font-size:13px; font-weight:700; color:#16121F;">{{ c.name }}</div>
+                  <div style="font-size:12px; color:#9A95A8; margin-top:2px; text-transform:uppercase; letter-spacing:.5px;">{{ c.hex }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <!-- ===== TYPOGRAPHY ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">03 — Typography</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Type scale — Plus Jakarta Sans</div>
+      <div style="background:#fff; border-radius:20px; padding:14px 34px; margin-top:24px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+        <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="7">
+          <div style="display:flex; align-items:baseline; gap:28px; padding:18px 0; border-bottom:1px solid #F0EEF3;">
+            <div style="width:150px; flex:none;">
+              <div style="font-size:13px; font-weight:700; color:#16121F;">{{ t.name }}</div>
+              <div style="font-size:12px; color:#9A95A8; margin-top:3px;">{{ t.spec }}</div>
+            </div>
+            <div style="{{ t.style }}">Receipt issued</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- ===== SPACING & RADIUS ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">04 — Form</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Radius, spacing & elevation</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:24px;">
+
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:18px;">Corner radius</div>
+          <div style="display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap;">
+            <sc-for list="{{ radii }}" as="r" hint-placeholder-count="5">
+              <div style="text-align:center;">
+                <div style="width:72px; height:72px; background:#EEE7F9; border:1.5px solid #C9B6E6; border-top-left-radius:{{ r.px }}; "></div>
+                <div style="font-size:12px; font-weight:700; color:#16121F; margin-top:8px;">{{ r.name }}</div>
+                <div style="font-size:11px; color:#9A95A8;">{{ r.px }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="height:1px; background:#ECEAF1; margin:24px 0 20px;"></div>
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:16px;">Spacing — 4px base</div>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <sc-for list="{{ spacing }}" as="sp" hint-placeholder-count="6">
+              <div style="text-align:center;">
+                <div style="width:{{ sp.px }}; height:24px; background:#814BC4; border-radius:5px;"></div>
+                <div style="font-size:11px; color:#9A95A8; margin-top:6px;">{{ sp.px }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:20px;">Elevation</div>
+          <div style="display:flex; flex-direction:column; gap:22px;">
+            <div style="display:flex; align-items:center; gap:18px;">
+              <div style="width:80px; height:56px; border-radius:16px; background:#fff; box-shadow:0 10px 26px -20px rgba(40,25,70,.5); border:1px solid #F0EEF3; flex:none;"></div>
+              <div><div style="font-size:13px; font-weight:700;">Card</div><div style="font-size:12px; color:#9A95A8;">0 10 26 -20 · rgba(40,25,70,.5)</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:18px;">
+              <div style="width:80px; height:56px; border-radius:16px; background:#814BC4; box-shadow:0 18px 34px -18px rgba(108,67,172,.8); flex:none;"></div>
+              <div><div style="font-size:13px; font-weight:700;">Raised / hero</div><div style="font-size:12px; color:#9A95A8;">0 18 34 -18 · purple glow</div></div>
+            </div>
+            <div style="display:flex; align-items:center; gap:18px;">
+              <div style="width:80px; height:56px; border-radius:16px; background:#814BC4; box-shadow:0 14px 26px -12px rgba(129,75,196,.8); flex:none;"></div>
+              <div><div style="font-size:13px; font-weight:700;">Button</div><div style="font-size:12px; color:#9A95A8;">0 14 26 -12 · tinted to fill</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ICONOGRAPHY ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">05 — Iconography</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Line icon set</div>
+      <div style="font-size:15px; color:#6E6880; margin-top:8px; max-width:620px; line-height:1.6;">A single Lucide-style family: 24px grid, 2px strokes, round caps & joins. One weight everywhere — no filled/duotone mixing. Tint to context (purple default, semantic on stat tiles).</div>
+      <div style="background:#fff; border-radius:20px; padding:30px; margin-top:24px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+        <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:14px;">
+          <sc-for list="{{ iconList }}" as="ic" hint-placeholder-count="14">
+            <div style="display:flex; flex-direction:column; align-items:center; gap:10px; padding:16px 6px; border-radius:16px; background:#FAF8FD; border:1px solid #F0EEF3;">
+              <div style="color:#2A1B45;">{{ ic.el }}</div>
+              <div style="font-size:11px; color:#6E6880; text-align:center;">{{ ic.name }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== COMPONENTS ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">06 — Components</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Core UI</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:24px;">
+
+        <!-- Buttons -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:20px;">Buttons</div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <button style="height:54px; border:none; border-radius:16px; background:#814BC4; color:#fff; font-family:Plus Jakarta Sans; font-size:16px; font-weight:700; letter-spacing:.5px; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Primary · purple</button>
+            <button style="height:54px; border:none; border-radius:16px; background:#FEB201; color:#16121F; font-family:Plus Jakarta Sans; font-size:16px; font-weight:800; cursor:pointer; box-shadow:0 14px 26px -12px rgba(254,178,1,.7);">Tenant · amber</button>
+            <div style="display:flex; gap:12px; align-items:center;">
+              <button style="flex:1; height:50px; border:1.5px solid #C9B6E6; border-radius:18px; background:#fff; color:#814BC4; font-family:Plus Jakarta Sans; font-size:15px; font-weight:700; cursor:pointer;">Secondary</button>
+              <button style="width:50px; height:50px; border:none; border-radius:50%; background:#814BC4; display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <div style="font-size:12px; color:#9A95A8; margin-top:4px; line-height:1.55;">Pills sit at ~3.5:1, not edge-to-edge slabs. 20px radius, 50–56px tall, shadow tinted to the fill.</div>
+          </div>
+        </div>
+
+        <!-- Inputs + segmented -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:20px;">Inputs & toggles</div>
+          <div style="font-size:11px; font-weight:800; letter-spacing:.5px; color:#16121F; margin-bottom:8px;">FIELD LABEL *</div>
+          <input value="Frank Kyakusse" style="width:100%; height:52px; border:none; border-radius:16px; background:#F2F3F3; padding:0 16px; font-family:Plus Jakarta Sans; font-size:15px; font-weight:600; color:#16121F; margin-bottom:18px;">
+          <div style="display:flex; border:1.5px solid #C9B6E6; border-radius:16px; padding:5px; margin-bottom:18px;">
+            <div style="flex:1; height:42px; border-radius:12px; background:#E7DEF6; color:#814BC4; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;">LANDLORD</div>
+            <div style="flex:1; height:42px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#814BC4;">TENANT</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:54px; height:34px; border-radius:99px; background:#814BC4; display:flex; align-items:center; padding:0 5px; justify-content:flex-end;"><div style="width:24px; height:24px; border-radius:50%; background:#fff;"></div></div>
+            <div style="width:54px; height:34px; border-radius:99px; background:#fff; box-shadow:inset 0 0 0 1px #E3E3E7; display:flex; align-items:center; padding:0 5px;"><div style="width:24px; height:24px; border-radius:50%; background:#C8C3D4;"></div></div>
+            <div style="font-size:12px; color:#9A95A8;">Segmented control & switch</div>
+          </div>
+        </div>
+
+        <!-- Badges & notes -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:20px;">Status & notes</div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px;">
+            <div style="padding:7px 16px; border-radius:99px; background:#FFE6D7; color:#FE8D47; font-size:12px; font-weight:800; letter-spacing:.5px;">PENDING</div>
+            <div style="padding:7px 16px; border-radius:99px; background:#DFF7E7; color:#1E8A4C; font-size:12px; font-weight:800; letter-spacing:.5px;">RECEIPT</div>
+            <div style="padding:7px 16px; border-radius:99px; background:#E7DEF6; color:#814BC4; font-size:12px; font-weight:800; letter-spacing:.5px;">LANDLORD</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="padding:11px 14px; border-radius:16px; font-size:13px; font-weight:600; text-align:center; background:#E7F2FF; color:#2B6FB0;">Kevin joined Room F 34</div>
+            <div style="padding:11px 14px; border-radius:16px; font-size:13px; font-weight:600; text-align:center; background:#FFE9DE; color:#C5602F;">Esther has not paid rent June</div>
+            <div style="padding:11px 14px; border-radius:16px; font-size:13px; font-weight:600; text-align:center; background:#DFF7E7; color:#1E8A4C;">Payment received from Mulongo</div>
+          </div>
+        </div>
+
+        <!-- List row + stat tile -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:20px;">List row & stat tile</div>
+          <div style="border:1px solid #E6E4EC; border-radius:18px; overflow:hidden; margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:14px; padding:14px 16px; border-bottom:1px solid #F0EEF3;">
+              <div style="width:40px; height:40px; border-radius:11px; background:#fff; box-shadow:inset 0 0 0 .5px #E3E3E7, 0 4px 14px -6px rgba(69,69,69,.25); display:flex; align-items:center; justify-content:center; color:#814BC4;">{{ rowUser }}</div>
+              <span style="flex:1; font-size:16px; font-weight:600; color:#1A1E25;">Personal details</span>
+              <svg width="9" height="15" viewBox="0 0 11 18" fill="none" stroke="#7D7F88" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L9 9l-7.5 7.5"/></svg>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px; padding:14px 16px;">
+              <div style="width:40px; height:40px; border-radius:11px; background:#fff; box-shadow:inset 0 0 0 .5px #E3E3E7, 0 4px 14px -6px rgba(69,69,69,.25); display:flex; align-items:center; justify-content:center; color:#814BC4;">{{ rowCard }}</div>
+              <span style="flex:1; font-size:16px; font-weight:600; color:#1A1E25;">Payment details</span>
+              <svg width="9" height="15" viewBox="0 0 11 18" fill="none" stroke="#7D7F88" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L9 9l-7.5 7.5"/></svg>
+            </div>
+          </div>
+          <div style="display:flex; gap:14px;">
+            <div style="flex:1; background:#F4EEFB; border-radius:16px; padding:16px;"><div style="width:42px; height:42px; border-radius:50%; background:#E3F1FF; display:flex; align-items:center; justify-content:center; color:#2B6FB0;">{{ statBank }}</div><div style="font-size:13px; font-weight:600; color:#5B5B5B; margin-top:12px;">Collected</div><div style="font-size:19px; font-weight:800; color:#16121F;">UGX 823K</div></div>
+            <div style="flex:1; background:#FFE9DC; border-radius:16px; padding:16px;"><div style="width:42px; height:42px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; color:#C5602F;">{{ statInbox }}</div><div style="font-size:13px; font-weight:600; color:#9A6B52; margin-top:12px;">Outstanding</div><div style="font-size:19px; font-weight:800; color:#16121F;">UGX 310K</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PRODUCT PATTERNS ===== -->
+    <div style="margin-top:60px;">
+      <div style="font-size:12px; font-weight:800; letter-spacing:2px; color:#9A95A8; text-transform:uppercase;">07 — Product patterns</div>
+      <div style="font-size:28px; font-weight:800; color:#16121F; margin-top:8px; letter-spacing:-.5px;">Feature surfaces</div>
+      <div style="font-size:15px; color:#6E6880; margin-top:8px; max-width:640px; line-height:1.6;">RentFlip is a ledger and evidence layer — it never moves money. These patterns carry the locked mechanics: the verification loop, Paste Board, billing &amp; lockdown.</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:24px;">
+
+        <!-- Verification card -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:6px;">Verification card</div>
+          <div style="font-size:12px; color:#9A95A8; margin-bottom:18px; line-height:1.5;">Tenant logs amount + Carrier Transaction ID → <b>pending</b>. Landlord approves; there is <b>no reject</b> — unmatched entries stay pending.</div>
+          <div style="border:1px solid #ECEAF1; border-radius:18px; padding:18px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <div style="width:44px; height:44px; border-radius:50%; background:#E7DEF6; display:flex; align-items:center; justify-content:center; font-weight:800; color:#814BC4; flex:none;">E</div>
+              <div style="flex:1;"><div style="font-size:15px; font-weight:800; color:#16121F;">Ephraim Matumbwe</div><div style="font-size:12px; color:#6E6880;">Room 23 · Lake View</div></div>
+              <div style="padding:6px 13px; border-radius:99px; background:#FFE6D7; color:#FE8D47; font-size:11px; font-weight:800; letter-spacing:.5px;">PENDING</div>
+            </div>
+            <div style="text-align:center; margin:16px 0 6px;"><div style="font-size:12px; color:#8A8594;">Amount logged</div><div style="font-size:30px; font-weight:800; color:#814BC4; letter-spacing:-1px;">UGX 550K</div></div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; padding-top:10px; border-top:1px solid #F0EEF3;"><span style="color:#6E6880;">Txn ID</span><span style="font-weight:700; color:#16121F; font-family:ui-monospace,monospace;">MP240117.1432</span></div>
+          </div>
+        </div>
+
+        <!-- Paste Board listing card -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:6px;">Paste Board listing</div>
+          <div style="font-size:12px; color:#9A95A8; margin-bottom:18px; line-height:1.5;">Private (free) &amp; Global (paid) feeds. Public sees only broker name, rating &amp; contact — landlord identity is masked.</div>
+          <div style="border-radius:18px; overflow:hidden; background:#F8F7FA; border:1px solid #F0EEF3;">
+            <div style="height:96px; background:linear-gradient(135deg,#C9B6E6,#9E72D8); position:relative;"><div style="position:absolute; top:10px; left:10px; padding:5px 12px; border-radius:99px; background:#FEB201; color:#16121F; font-size:10px; font-weight:800; letter-spacing:.5px;">FEATURED</div></div>
+            <div style="padding:14px 16px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-size:16px; font-weight:800; color:#16121F;">2-Bedroom apt</span><span style="font-size:16px; font-weight:800; color:#814BC4;">UGX 600K</span></div>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px;">
+                <div style="display:flex; align-items:center; gap:7px;"><div style="width:26px; height:26px; border-radius:50%; background:#E7DEF6; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#814BC4;">D</div><div style="display:flex; align-items:center; gap:3px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FEB201"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"/></svg><span style="font-size:12px; font-weight:700; color:#6E6880;">4.8</span></div></div>
+                <div style="padding:7px 14px; border-radius:99px; background:#814BC4; color:#fff; font-size:12px; font-weight:700;">Contact</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal chat -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:6px;">Deal-closing chat</div>
+          <div style="font-size:12px; color:#9A95A8; margin-bottom:18px; line-height:1.5;">The app's <b>only</b> persistent chat. 500-char limit · 1 photo per message · no other attachments · no emoji picker.</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="align-self:flex-start; max-width:80%; padding:10px 14px; border-radius:16px; border-bottom-left-radius:5px; background:#F1EFF6; font-size:13px; color:#16121F;">Is Room F12 still vacant?</div>
+            <div style="align-self:flex-end; max-width:80%; padding:10px 14px; border-radius:16px; border-bottom-right-radius:5px; background:#814BC4; color:#fff; font-size:13px;">Yes — UGX 600K a month.</div>
+            <div style="display:flex; align-items:center; gap:8px; margin-top:6px;">
+              <div style="width:38px; height:38px; border-radius:12px; background:#F2F3F3; display:flex; align-items:center; justify-content:center; color:#814BC4;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7h3l1.5-2h5L16 7h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+              <div style="flex:1; height:38px; border-radius:12px; background:#F2F3F3; display:flex; align-items:center; justify-content:space-between; padding:0 14px;"><span style="font-size:12px; color:#9A95A8;">Message…</span><span style="font-size:10px; font-weight:700; color:#C8C3D4;">0/500</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing + lockdown -->
+        <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 10px 30px -22px rgba(40,25,70,.5);">
+          <div style="font-size:14px; font-weight:700; color:#16121F; margin-bottom:6px;">Billing &amp; lockdown</div>
+          <div style="font-size:12px; color:#9A95A8; margin-bottom:18px; line-height:1.5;">Platform fee = 0.5% of cleared volume, uncapped, billed by STK Push. Unpaid (Gate 1) or no-sync-72h (Gate 2) → un-dismissible lockdown.</div>
+          <div style="display:flex; gap:14px;">
+            <div style="flex:1; border-radius:16px; padding:16px; background:linear-gradient(150deg,#9E72D8,#6E43AC); color:#fff;"><div style="font-size:11px; font-weight:700; letter-spacing:.8px; opacity:.85;">FEE DUE</div><div style="font-size:22px; font-weight:800; letter-spacing:-.5px; margin-top:6px;">UGX 42K</div><div style="font-size:11px; opacity:.85; margin-top:2px;">0.5% · uncapped</div></div>
+            <div style="flex:1; border-radius:16px; padding:16px; background:linear-gradient(165deg,#2A1B45,#16121F); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div style="font-size:12px; font-weight:700;">Access locked</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:54px; padding-top:30px; border-top:1px solid #E3DEEC; display:flex; align-items:center; justify-content:space-between;">
+      <div style="font-size:13px; color:#9A95A8;">RentFlip Design System · derived from the product</div>
+      <a href="RentFlip.dc.html" style="text-decoration:none; padding:12px 22px; border-radius:16px; background:#814BC4; color:#fff; font-size:14px; font-weight:700; box-shadow:0 12px 24px -12px rgba(129,75,196,.8);">Open the app →</a>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  ICONS = {
+    'download': '<path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+    'user-plus': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/>',
+    'armchair': '<path d="M5 11V8a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M3 13.5A2.5 2.5 0 0 1 7 15v1h10v-1a2.5 2.5 0 0 1 4-1.5"/><path d="M5 18v-2.5M19 18v-2.5"/><path d="M6 21v-3M18 21v-3"/>',
+    'home': '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M9.5 21v-6h5v6"/>',
+    'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    'bar-chart': '<path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-8"/>',
+    'settings': '<circle cx="12" cy="12" r="3"/><path d="M12 2v2.5M12 19.5V22M22 12h-2.5M4.5 12H2M19.07 4.93l-1.77 1.77M6.7 17.3l-1.77 1.77M19.07 19.07l-1.77-1.77M6.7 6.7 4.93 4.93"/>',
+    'credit-card': '<rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/>',
+    'help-circle': '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.5a2.4 2.4 0 0 1 4.7.7c0 1.6-2.3 2-2.3 3.3"/><path d="M12 17h.01"/>',
+    'share': '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>',
+    'star': '<path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"/>',
+    'shield': '<path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6Z"/><path d="m9 12 2 2 4-4"/>',
+    'file-text': '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+    'banknote': '<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/>',
+    'bell': '<path d="M6 9a6 6 0 0 1 12 0c0 4.5 1.5 5.5 2 6H4c.5-.5 2-1.5 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+    'receipt': '<path d="M5 21V4a1 1 0 0 1 1.4-.9L8 4l2-1 2 1 2-1 2 1 1.6-.9A1 1 0 0 1 19 4v17l-2-1-2 1-2-1-2 1-2-1Z"/><path d="M8 8.5h8M8 12h8M8 15.5h5"/>',
+    'wallet': '<path d="M3 7a2 2 0 0 1 2-2h11a1 1 0 0 1 1 1v2"/><path d="M3 7v10a2 2 0 0 0 2 2h13a1 1 0 0 0 1-1v-3"/><path d="M21 11h-4a2 2 0 0 0 0 4h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z"/>',
+    'check-circle': '<circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 5-5"/>',
+    'inbox': '<path d="M22 12h-5l-2 3H9l-2-3H2"/><path d="M5.5 6.5 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-5.5a2 2 0 0 0-1.7-1H7.2a2 2 0 0 0-1.7 1Z"/>',
+    'building': '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 8h.01M15 8h.01M9 12h.01M15 12h.01M10 21v-3a2 2 0 0 1 4 0v3"/>',
+    'store': '<path d="M4 9.5 5 4h14l1 5.5"/><path d="M4 9.5a2.4 2.4 0 0 0 4.7 0 2.4 2.4 0 0 0 4.7 0 2.4 2.4 0 0 0 4.7 0"/><path d="M5 11v9h14v-9"/><path d="M9.5 20v-5h5v5"/>',
+    'map-pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+    'repeat': '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+    'log-out': '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/>',
+    'search': '<circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/>',
+    'bell-2': '<path d="M6 9a6 6 0 0 1 12 0c0 4.5 1.5 5.5 2 6H4c.5-.5 2-1.5 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+    'plus': '<path d="M12 5v14M5 12h14"/>',
+    'chevron-right': '<path d="m9 6 6 6-6 6"/>'
+  };
+
+  ic(name, o) {
+    o = o || {};
+    const size = o.size || 24;
+    return React.createElement('svg', {
+      width: size, height: size, viewBox: '0 0 24 24',
+      fill: o.fill || 'none', stroke: o.color || 'currentColor',
+      strokeWidth: o.sw || 2, strokeLinecap: 'round', strokeLinejoin: 'round',
+      style: { display: 'block' },
+      dangerouslySetInnerHTML: { __html: this.ICONS[name] || '' }
+    });
+  }
+
+  renderVals() {
+    const palette = [
+      { name: 'Brand & Primary', colors: [
+        { name: 'Primary', hex: '#814BC4' },
+        { name: 'Primary Deep', hex: '#6E43AC' },
+        { name: 'Primary 400', hex: '#9E72D8' },
+        { name: 'Primary 100', hex: '#E7DEF6' },
+        { name: 'Primary 50', hex: '#F4EEFB' },
+        { name: 'Brand Blue', hex: '#3A4BD6' },
+      ]},
+      { name: 'Role accents', colors: [
+        { name: 'Landlord', hex: '#814BC4' },
+        { name: 'Tenant', hex: '#FEB201' },
+        { name: 'Tenant Coral', hex: '#FF8D5E' },
+        { name: 'Tenant 100', hex: '#FBF1E0' },
+        { name: 'Landlord 100', hex: '#E7DEF6' },
+        { name: 'Ink', hex: '#16121F' },
+      ]},
+      { name: 'Semantic', colors: [
+        { name: 'Success', hex: '#03BA43' },
+        { name: 'Success Deep', hex: '#1E8A4C' },
+        { name: 'Success BG', hex: '#DFF7E7' },
+        { name: 'Info', hex: '#2B6FB0' },
+        { name: 'Info BG', hex: '#E7F2FF' },
+        { name: 'Warn BG', hex: '#FFE9DE' },
+      ]},
+      { name: 'Neutrals', colors: [
+        { name: 'Ink', hex: '#16121F' },
+        { name: 'Muted', hex: '#6E6880' },
+        { name: 'Faint', hex: '#9A95A8' },
+        { name: 'Border', hex: '#ECEAF1' },
+        { name: 'Field', hex: '#F2F3F3' },
+        { name: 'Surface', hex: '#FFFFFF' },
+      ]},
+    ];
+
+    const typeScale = [
+      { name: 'Display', spec: '36 / 800 · -1px', style: 'font-size:36px; font-weight:800; letter-spacing:-1px; color:#16121F;' },
+      { name: 'Title', spec: '26 / 700', style: 'font-size:26px; font-weight:700; color:#16121F;' },
+      { name: 'Heading', spec: '22 / 800', style: 'font-size:22px; font-weight:800; color:#16121F;' },
+      { name: 'Subhead', spec: '20 / 800', style: 'font-size:20px; font-weight:800; color:#16121F;' },
+      { name: 'Body', spec: '16 / 600', style: 'font-size:16px; font-weight:600; color:#3A2F4D;' },
+      { name: 'Caption', spec: '14 / 500', style: 'font-size:14px; font-weight:500; color:#6E6880;' },
+      { name: 'Label', spec: '11 / 800 · uppercase', style: 'font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:#814BC4;' },
+    ];
+
+    const radii = [
+      { name: 'Input', px: '16px' },
+      { name: 'Tile', px: '18px' },
+      { name: 'Button', px: '16px' },
+      { name: 'Card', px: '20px' },
+      { name: 'Pill', px: '99px' },
+    ];
+
+    const spacing = [
+      { px: '4px' }, { px: '8px' }, { px: '12px' }, { px: '16px' }, { px: '24px' }, { px: '34px' },
+    ];
+
+    const iconOrder = ['banknote','wallet','download','inbox','receipt','credit-card','user','user-plus','home','building','store','armchair','bell','bar-chart','check-circle','shield','file-text','settings','share','star','help-circle','map-pin','repeat','search','log-out','plus'];
+    const iconList = iconOrder.map(n => ({ name: n, el: this.ic(n, { size: 24, color: '#2A1B45' }) }));
+
+    return {
+      palette, typeScale, radii, spacing, iconList,
+      rowUser: this.ic('user', { size: 20, color: '#814BC4' }),
+      rowCard: this.ic('credit-card', { size: 20, color: '#814BC4' }),
+      statBank: this.ic('banknote', { size: 21, color: '#2B6FB0' }),
+      statInbox: this.ic('inbox', { size: 21, color: '#C5602F' }),
+    };
+  }
+}
+</script>
+</body>
+</html>
