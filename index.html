@@ -23,38 +23,49 @@
 </style>
 </helmet>
 
-<div style="min-width:100%; min-height:100vh; width:max-content; box-sizing:border-box; padding:40px 48px; background:#E9E7EE; display:flex; gap:40px; align-items:flex-start; font-family:Plus Jakarta Sans, sans-serif;">
+<div style="width:100%; height:100vh; height:100dvh; box-sizing:border-box; background:{{ shellBg }}; font-family:Plus Jakarta Sans, sans-serif; overflow:hidden; position:relative;">
 
-  <!-- REVIEW RAIL -->
-  <div style="flex:none; width:230px; position:sticky; top:40px;">
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-      <img src="assets/logo-rentflip-mark.svg" style="width:30px; height:33px; display:block;">
-      <div style="font-weight:800; font-size:16px; color:#241A33; letter-spacing:-.3px;">RentFlip</div>
-    </div>
-    <div style="font-size:11px; color:#8A8599; margin-bottom:18px; letter-spacing:.2px;">Prototype · tap a screen to jump</div>
+  <!-- SCREENS NAV TRIGGER (subtle, dev-only) -->
+  <div onClick="{{ openNav }}" style="position:fixed; z-index:90; right:12px; bottom:12px; width:36px; height:36px; border-radius:50%; background:rgba(20,18,31,.5); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 16px -6px rgba(0,0,0,.5); opacity:.8;">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+  </div>
 
-    <sc-for list="{{ railGroups }}" as="g" hint-placeholder-count="4">
-      <div style="margin-bottom:16px;">
-        <div style="font-size:10px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; text-transform:uppercase; margin:0 0 8px 4px;">{{ g.name }}</div>
-        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
-          <div onClick="{{ it.go }}" style="{{ it.style }}">
-            <span style="{{ it.dotStyle }}"></span>
-            <span>{{ it.label }}</span>
+  <!-- SCREENS NAV OVERLAY -->
+  <sc-if value="{{ isNavOpen }}" hint-placeholder-val="{{ true }}">
+    <div onClick="{{ closeNav }}" style="position:fixed; inset:0; z-index:100; background:rgba(20,15,35,.55); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); display:flex; justify-content:flex-end; animation:rfFade .2s ease;">
+      <div onClick="{{ stopTap }}" class="rf-scroll" style="width:282px; max-width:84vw; height:100%; background:#fff; box-shadow:-12px 0 40px -10px rgba(20,15,35,.5); padding:22px 16px 34px; overflow-y:auto; animation:rfUp .25s ease;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+          <img src="assets/logo-rentflip-mark.svg" style="width:28px; height:31px; display:block;">
+          <div style="font-weight:800; font-size:16px; color:#241A33; letter-spacing:-.3px;">RentFlip</div>
+          <div onClick="{{ closeNav }}" style="margin-left:auto; width:30px; height:30px; border-radius:50%; background:#F2F0F7; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6880" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+          </div>
+        </div>
+        <div style="font-size:11px; color:#8A8599; margin-bottom:18px; letter-spacing:.2px;">Prototype · tap a screen to jump</div>
+
+        <sc-for list="{{ railGroups }}" as="g" hint-placeholder-count="4">
+          <div style="margin-bottom:16px;">
+            <div style="font-size:10px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; text-transform:uppercase; margin:0 0 8px 4px;">{{ g.name }}</div>
+            <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+              <div onClick="{{ it.go }}" style="{{ it.style }}">
+                <span style="{{ it.dotStyle }}"></span>
+                <span>{{ it.label }}</span>
+              </div>
+            </sc-for>
           </div>
         </sc-for>
       </div>
-    </sc-for>
-  </div>
+    </div>
+  </sc-if>
 
-  <!-- PHONE -->
-  <div style="flex:none; position:sticky; top:40px;">
-    <div style="width:392px; height:812px; background:#0E0B14; border-radius:54px; padding:13px; box-shadow:0 40px 90px -30px rgba(40,25,70,.55), 0 0 0 2px rgba(0,0,0,.04); position:relative;">
-      <div style="width:100%; height:100%; background:{{ shellBg }}; border-radius:42px; overflow:hidden; position:relative;">
+  <!-- APP (full screen) -->
+  <div style="width:100%; height:100%; position:relative;">
+    <div style="width:100%; height:100%; position:relative;">
+      <div style="width:100%; height:100%; background:{{ shellBg }}; overflow:hidden; position:relative;">
 
         <!-- status bar -->
         <div style="position:absolute; top:0; left:0; right:0; height:52px; z-index:40; display:flex; align-items:center; justify-content:space-between; padding:0 30px; pointer-events:none;">
           <div style="font-size:15px; font-weight:700; color:{{ statusColor }}; letter-spacing:.2px; margin-top:6px;">9:41</div>
-          <div style="width:128px; height:30px; background:#0E0B14; border-radius:0 0 18px 18px; position:absolute; left:50%; transform:translateX(-50%); top:0;"></div>
           <div style="display:flex; align-items:center; gap:6px; margin-top:6px; color:{{ statusColor }};">
             <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="6" width="3" height="5" rx="1"></rect><rect x="4.5" y="4" width="3" height="7" rx="1"></rect><rect x="9" y="2" width="3" height="9" rx="1"></rect><rect x="13.5" y="0" width="3" height="11" rx="1"></rect></svg>
             <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor"><path d="M8 2.2c2 0 3.9.8 5.3 2.1l1.2-1.3C13 1.4 10.6.5 8 .5S3 1.4 1.5 3l1.2 1.3C4.1 3 6 2.2 8 2.2Zm0 3.3c1.1 0 2.1.4 2.8 1.2l1.2-1.3C12.9 4.3 11.5 3.7 8 3.7S3.1 4.3 2 5.4l1.2 1.3C4 5.9 6.9 5.5 8 5.5Zm0 3.2 1.7-1.8c-.4-.5-1-.8-1.7-.8s-1.3.3-1.7.8L8 8.7Z"></path></svg>
@@ -141,7 +152,7 @@
           <sc-if value="{{ isVerifyPhone }}" hint-placeholder-val="{{ true }}">
             <div style="min-height:786px; display:flex; flex-direction:column; background:#fff; animation:rfFade .35s ease;">
               <div style="height:350px; position:relative; overflow:hidden; flex:none; background:#ECE6FA;">
-                <div style="position: absolute; inset: 0; background: url(assets/auth-bg-new.png) center top / cover; width: 370px; height: 383px"><div style="position: fixed; left: 504px; top: 145px; transform: translateX(-50%); width: 182px; animation: rfFloat 3.8s ease-in-out infinite"><img src="assets/auth-phone-new.png" style="width: 100%; display: block; filter: drop-shadow(0 22px 32px rgba(60,40,110,.32)); object-fit: fill"></div></div>
+                <div style="position: absolute; inset: 0; background: url(assets/auth-bg-new.png) center top / cover;"><div style="position: absolute; left: 50%; top: 40px; transform: translateX(-50%); width: 182px; animation: rfFloat 3.8s ease-in-out infinite"><img src="assets/auth-phone-new.png" style="width: 100%; display: block; filter: drop-shadow(0 22px 32px rgba(60,40,110,.32)); object-fit: fill"></div></div>
                 
                 
                 
@@ -901,13 +912,13 @@
                           </div>
                         </div>
                       </sc-if>
-                      <sc-if value="{{ l.hasRating }}" hint-placeholder-val="{{ true }}">
+                      <sc-if value="{{ l.notMine }}" hint-placeholder-val="{{ true }}">
                         <div style="display:flex; align-items:center; justify-content:space-between;">
                           <div style="display:flex; align-items:center; gap:8px;">
-                            <div style="width:30px; height:30px; border-radius:50%; background:#E7DEF6; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:{{ accent }};">B</div>
-                            <div><div style="font-size:13px; font-weight:700; color:#16121F;">{{ l.broker }}</div><div style="display:flex; align-items:center; gap:3px;">{{ l.starEl }}<span style="font-size:12px; font-weight:700; color:#6E6880;">{{ l.rating }}</span></div></div>
+                            <div style="width:30px; height:30px; border-radius:50%; background:#E7DEF6; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:{{ accent }};">{{ l.ownerInitial }}</div>
+                            <div><div style="font-size:13px; font-weight:700; color:#16121F;">{{ l.owner }}</div><div style="font-size:12px; font-weight:600; color:#9A95A8;">Property owner</div></div>
                           </div>
-                          <div onClick="{{ l.open }}" style="padding:9px 16px; border-radius:99px; background:{{ accent }}; color:#fff; font-size:13px; font-weight:700; cursor:pointer;">Contact</div>
+                          <div onClick="{{ l.enquire }}" style="padding:9px 16px; border-radius:99px; background:{{ accent }}; color:#fff; font-size:13px; font-weight:700; cursor:pointer;">Enquire</div>
                         </div>
                       </sc-if>
                     </div>
@@ -918,58 +929,18 @@
             </div>
           </sc-if>
 
-          <!-- ============ LISTINGS BOARD · BROKER LINK ============ -->
-          <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
-            <div data-screen-label="Listings Board · Broker link" style="min-height:786px; background:#fff; padding:60px 22px 40px; animation:rfFade .35s ease;">
-              <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
-                <div onClick="{{ goPaste }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
-                <div style="font-size:22px; font-weight:700; color:#16121F;">Broker Link</div>
-              </div>
-
-              <div style="display:flex; align-items:center; gap:14px; padding:16px; border-radius:18px; background:#F4EEFB; margin-bottom:20px;">
-                <div style="width:54px; height:54px; border-radius:50%; background:{{ accent }}; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:#fff; flex:none;">D</div>
-                <div style="flex:1;"><div style="font-size:17px; font-weight:800; color:#16121F;">Daniel Okello</div><div style="display:flex; align-items:center; gap:4px; margin-top:2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg><span style="font-size:13px; font-weight:700; color:#6E6880;">4.8 · marketing Room F12</span></div></div>
-              </div>
-
-              <div style="font-size:11px; font-weight:800; letter-spacing:.5px; color:#16121F; margin-bottom:10px;">IDENTITY MASKING</div>
-              <div style="border:1px solid #ECEAF1; border-radius:18px; padding:18px; margin-bottom:18px;">
-                <div style="font-size:13px; font-weight:700; color:#1E8A4C; margin-bottom:10px;">Public sees</div>
-                <div style="display:flex; flex-direction:column; gap:9px; margin-bottom:16px;">
-                  <div style="display:flex; align-items:center; gap:9px; font-size:14px; color:#16121F;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1E8A4C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg>Broker name &amp; rating</div>
-                  <div style="display:flex; align-items:center; gap:9px; font-size:14px; color:#16121F;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1E8A4C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg>Contact options</div>
-                </div>
-                <div style="height:1px; background:#F0EEF3; margin-bottom:14px;"></div>
-                <div style="font-size:13px; font-weight:700; color:#C5602F; margin-bottom:10px;">Hidden from public</div>
-                <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                  <div style="display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:99px; background:#F2F3F3; font-size:13px; font-weight:600; color:#6E6880;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9A95A8" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Your name</div>
-                  <div style="display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:99px; background:#F2F3F3; font-size:13px; font-weight:600; color:#6E6880;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9A95A8" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Phone number</div>
-                  <div style="display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:99px; background:#F2F3F3; font-size:13px; font-weight:600; color:#6E6880;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9A95A8" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Building ID</div>
-                  <div style="display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:99px; background:#F2F3F3; font-size:13px; font-weight:600; color:#6E6880;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9A95A8" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>GPS coordinates</div>
-                </div>
-              </div>
-
-              <div style="border:1px dashed #C9B6E6; border-radius:18px; padding:16px 18px; margin-bottom:24px; background:#FAF8FD;">
-                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;"><span style="font-size:13px; font-weight:800; color:{{ accent }};">Commission snapshot</span><span style="font-size:10px; font-weight:700; letter-spacing:.5px; color:#9A95A8; border:1px solid #D8CEE9; border-radius:99px; padding:3px 8px;">IMMUTABLE</span></div>
-                <div style="font-size:14px; color:#16121F; line-height:1.6;">Room F12 · agreed <b>50% of one month</b> · locked 12 Jan 2024. Both sides can refer back to this in a dispute.</div>
-              </div>
-
-              <button onClick="{{ goChat }}" style="width:100%; height:54px; border:1.5px solid #C9B6E6; border-radius:16px; background:#fff; color:{{ accent }}; font-family:Plus Jakarta Sans; font-size:16px; font-weight:700; cursor:pointer; margin-bottom:12px;">Open deal chat</button>
-              <button onClick="{{ revokeBroker }}" style="width:100%; height:54px; border:1.5px solid #E8C3B4; border-radius:16px; background:#fff; color:#C5602F; font-family:Plus Jakarta Sans; font-size:16px; font-weight:700; cursor:pointer;">Revoke broker</button>
-            </div>
-          </sc-if>
-
           <!-- ============ DEAL-CLOSING CHAT ============ -->
           <sc-if value="{{ isChat }}" hint-placeholder-val="{{ true }}">
             <div data-screen-label="Listings Board · Deal chat" style="min-height:786px; background:#FBFAFC; display:flex; flex-direction:column;">
               <div style="padding:56px 20px 14px; background:#fff; border-bottom:1px solid #ECEAF1; display:flex; align-items:center; gap:14px;">
-                <div onClick="{{ goListing }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
-                <div style="width:42px; height:42px; border-radius:50%; background:{{ accent }}; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:#fff;">D</div>
-                <div style="flex:1;"><div style="font-size:17px; font-weight:800; color:#16121F;">Daniel Okello</div><div style="font-size:12px; color:#6E6880;">Deal chat · Room F12</div></div>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
+                <div onClick="{{ goListingDetail }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+                <div style="width:42px; height:42px; border-radius:50%; background:{{ accent }}; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:#fff;">B</div>
+                <div style="flex:1;"><div style="font-size:17px; font-weight:800; color:#16121F;">Brian Mugume</div><div style="font-size:12px; color:#6E6880;">Listing enquiry · Executive studio</div></div>
+                <div style="padding:5px 11px; border-radius:99px; background:#FBF1E0; color:#9A6B1E; font-size:10px; font-weight:800; letter-spacing:.5px;">INTERESTED</div>
               </div>
 
               <div style="flex:1; padding:18px 18px 6px; display:flex; flex-direction:column; gap:12px;">
-                <div style="text-align:center; font-size:11px; font-weight:700; color:#9A95A8; margin-bottom:2px;">Deal-closing chat · masked identities</div>
+                <div style="text-align:center; font-size:11px; font-weight:700; color:#9A95A8; margin-bottom:2px;">Enquiry about this listing</div>
                 <sc-for list="{{ chatMsgs }}" as="m" hint-placeholder-count="4">
                   <div style="{{ m.rowStyle }}">
                     <div style="{{ m.bubbleStyle }}">
@@ -1196,16 +1167,16 @@
                   <div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; margin-bottom:14px;">LISTED BY</div>
                   <div style="display:flex; align-items:center; gap:14px;">
                     <div style="width:44px; height:44px; border-radius:50%; background:#E7DEF6; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800; color:{{ accent }}; flex:none;">S</div>
-                    <div style="flex:1;"><div style="font-size:16px; font-weight:800; color:#16121F;">Sarah Nakato</div><div style="display:flex; align-items:center; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg><span style="font-size:13px; font-weight:700; color:#6E6880;">4.9 · verified broker</span></div></div>
+                    <div style="flex:1;"><div style="font-size:16px; font-weight:800; color:#16121F;">Sarah Nakato</div><div style="display:flex; align-items:center; gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E8A4C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"></path></svg><span style="font-size:13px; font-weight:700; color:#6E6880;">Verified owner</span></div></div>
                   </div>
                   <div style="display:flex; gap:10px; margin-top:16px;">
                     <div style="flex:1; padding:12px; border-radius:14px; background:#DFF7E7; display:flex; align-items:center; justify-content:center; gap:7px; font-size:13px; font-weight:700; color:#1E8A4C; cursor:pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E8A4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"></path></svg>WhatsApp</div>
                     <div style="flex:1; padding:12px; border-radius:14px; background:#E7F2FF; display:flex; align-items:center; justify-content:center; gap:7px; font-size:13px; font-weight:700; color:#2B6FB0; cursor:pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2B6FB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"></path></svg>Call</div>
                   </div>
-                  <div style="font-size:12px; color:#9A95A8; line-height:1.55; margin-top:14px;">The property owner's identity is protected. Contact the broker for viewing arrangements.</div>
+                  <div style="font-size:12px; color:#9A95A8; line-height:1.55; margin-top:14px;">Contact the owner directly to arrange a viewing.</div>
                 </div>
 
-                <button onClick="{{ goChatN }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8); margin-top:22px;">Contact Broker</button>
+                <button onClick="{{ goChatN }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8); margin-top:22px;">Message owner</button>
                 <button style="width:100%; height:52px; border:1.5px solid #C9B6E6; border-radius:16px; background:#fff; color:{{ accent }}; font-family:Plus Jakarta Sans; font-size:16px; font-weight:700; cursor:pointer; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:8px;">{{ bookmarkEl }}Save listing</button>
               </div>
             </div>
@@ -1239,64 +1210,72 @@
               <div style="font-size:11px; font-weight:800; letter-spacing:.5px; color:#16121F; margin-bottom:10px;">VISIBILITY</div>
               <div style="border:1px solid #ECEAF1; border-radius:18px; overflow:hidden; margin-bottom:24px;">
                 <div style="display:flex; align-items:center; gap:12px; padding:15px 16px; border-bottom:1px solid #F0EEF3;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid #D8D4E0; flex:none;"></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">My Listings</div><div style="font-size:12.5px; color:#6E6880;">Private — only you see it. Free.</div></div></div>
-                <div style="display:flex; align-items:center; gap:12px; padding:15px 16px;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid {{ accent }}; flex:none; display:flex; align-items:center; justify-content:center;"><div style="width:11px; height:11px; border-radius:50%; background:{{ accent }};"></div></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">All Listings</div><div style="font-size:12.5px; color:#6E6880;">Public — requires broker status.</div></div></div>
+                <div style="display:flex; align-items:center; gap:12px; padding:15px 16px;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid {{ accent }}; flex:none; display:flex; align-items:center; justify-content:center;"><div style="width:11px; height:11px; border-radius:50%; background:{{ accent }};"></div></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">All Listings</div><div style="font-size:12.5px; color:#6E6880;">Public — 1% of monthly rent to promote.</div></div></div>
               </div>
-              <button onClick="{{ goBroker }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Publish listing</button>
+              <button onClick="{{ goPromote }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Publish listing</button>
             </div>
           </sc-if>
 
-          <!-- ============ BROKER UPGRADE ============ -->
-          <sc-if value="{{ isBroker }}" hint-placeholder-val="{{ true }}">
-            <div data-screen-label="Listings Board · Broker upgrade" style="min-height:786px; background:#fff; padding:60px 22px 40px; animation:rfFade .3s ease;">
+          <!-- ============ PROMOTE / ADVERTISE LISTING ============ -->
+          <sc-if value="{{ isPromote }}" hint-placeholder-val="{{ true }}">
+            <div data-screen-label="Listings Board · Promote listing" style="min-height:786px; background:#fff; padding:60px 22px 40px; animation:rfFade .3s ease;">
               <div style="display:flex; align-items:center; gap:16px; margin-bottom:8px;">
                 <div onClick="{{ goPaste }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
-                <div style="font-size:22px; font-weight:700; color:#16121F;">Become a Broker</div>
+                <div style="font-size:22px; font-weight:700; color:#16121F;">Promote listing</div>
               </div>
-              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">Publish to All Listings &amp; earn commission on deals you close.</div>
+              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">List this unit publicly &amp; reach the right renters.</div>
 
-              <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:22px;">
-                <sc-for list="{{ brokerTierList }}" as="t" hint-placeholder-count="3">
-                  <div onClick="{{ t.pick }}" style="{{ t.cardStyle }}">
-                    <div style="display:flex; align-items:center; justify-content:space-between;">
-                      <div style="font-size:19px; font-weight:800; color:#16121F;">{{ t.name }}</div>
-                      <sc-if value="{{ t.popular }}" hint-placeholder-val="{{ true }}"><div style="padding:5px 11px; border-radius:99px; background:{{ tenantAccent }}; color:#16121F; font-size:10px; font-weight:800; letter-spacing:.5px;">MOST POPULAR</div></sc-if>
-                    </div>
-                    <div style="font-size:24px; font-weight:800; color:{{ accent }}; letter-spacing:-.5px; margin-top:6px;">{{ t.price }}<span style="font-size:13px; font-weight:600; color:#6E6880;"> / month</span></div>
-                    <div style="font-size:13px; color:#6E6880; margin-top:4px;">{{ t.range }}</div>
+              <div style="display:flex; align-items:center; gap:14px; padding:14px; border-radius:18px; background:#F4EEFB; margin-bottom:22px;">
+                <div style="width:54px; height:54px; border-radius:14px; background:url(assets/property-glasshouse.jpg) center/cover; flex:none;"></div>
+                <div style="flex:1; min-width:0;"><div style="font-size:17px; font-weight:800; color:#16121F;">Room F 78</div><div style="font-size:13px; color:#6E6880;">Lake View Apartments, Kiwatule</div></div>
+                <div style="text-align:right;"><div style="font-size:16px; font-weight:800; color:{{ accent }};">UGX 500K</div><div style="font-size:11px; color:#9A95A8;">/ month</div></div>
+              </div>
+
+              <div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; margin:0 2px 12px;">PUBLIC LISTING FEE</div>
+              <div style="display:flex; align-items:center; justify-content:space-between; border:1px solid #ECEAF1; border-radius:18px; padding:16px 18px; margin-bottom:22px;">
+                <div style="flex:1; min-width:0; padding-right:12px;"><div style="font-size:15px; font-weight:800; color:#16121F;">1% of monthly rent</div><div style="font-size:12.5px; color:#6E6880; margin-top:2px; line-height:1.45;">Charged each time you list this unit publicly — including if it’s taken and re-listed later.</div></div>
+                <div style="font-size:18px; font-weight:800; color:{{ accent }}; flex:none;">UGX 5,000</div>
+              </div>
+
+              <div style="display:flex; gap:11px; padding:13px 15px; border-radius:16px; background:#F4EEFB; margin-bottom:24px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{ accent }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <div><div style="font-size:13px; font-weight:800; color:{{ accent }};">Auto-targeted to your area</div><div style="font-size:12.5px; color:#6E6880; line-height:1.5; margin-top:3px;">Shown to renters around <b style="color:#16121F;">Kiwatule</b> looking for rooms &amp; studios near <b style="color:#16121F;">UGX 300K–700K</b> — real prospects, not just reach.</div></div>
+              </div>
+
+              <div style="display:flex; align-items:center; justify-content:space-between; margin:0 2px 8px;"><div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8;">BOOST WITH ADS</div><div style="font-size:11px; font-weight:700; color:#9A95A8;">Optional</div></div>
+              <div style="font-size:12.5px; color:#6E6880; line-height:1.55; margin:0 2px 14px;">Add a budget to run targeted ads on the networks below. A bigger budget reaches more of the right people — you decide how much to spend; RentFlip just makes paying for it simple.</div>
+
+              <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:14px;">
+                <sc-for list="{{ promoBudgets }}" as="b" hint-placeholder-count="4">
+                  <div onClick="{{ b.pick }}" style="{{ b.cardStyle }}">
+                    <div style="font-size:16px; font-weight:800; color:#16121F;">{{ b.label }}</div>
+                    <div style="font-size:12px; font-weight:600; color:#6E6880; margin-top:3px;">{{ b.reach }}</div>
                   </div>
                 </sc-for>
               </div>
 
-              <div style="display:flex; gap:11px; padding:13px 15px; border-radius:16px; background:#E7F2FF; margin-bottom:20px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B6FB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6Z"></path><path d="m9 12 2 2 4-4"></path></svg>
-                <div style="font-size:12.5px; font-weight:600; color:#2B6FB0; line-height:1.5;">KYC verification is required before broker status activates. Billed monthly via STK Push.</div>
+              <div style="display:flex; gap:8px; margin-bottom:22px;">
+                <sc-for list="{{ promoChannels }}" as="c" hint-placeholder-count="4">
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; padding:11px 4px; border:1px solid #ECEAF1; border-radius:14px;">
+                    <div style="width:34px; height:34px; border-radius:10px; background:{{ c.bg }}; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:{{ c.fg }};">{{ c.tag }}</div>
+                    <div style="font-size:10.5px; font-weight:700; color:#6E6880;">{{ c.name }}</div>
+                  </div>
+                </sc-for>
               </div>
-              <button onClick="{{ brokerToKyc }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Continue to verification</button>
-            </div>
-          </sc-if>
 
-          <!-- ============ RATE BROKER ============ -->
-          <sc-if value="{{ isRate }}" hint-placeholder-val="{{ true }}">
-            <div data-screen-label="Listings Board · Rate broker" style="min-height:786px; background:#fff; padding:60px 22px 40px; display:flex; flex-direction:column; animation:rfFade .3s ease;">
-              <div style="display:flex; align-items:center; gap:16px; margin-bottom:28px;">
-                <div onClick="{{ goChatN }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
-                <div style="font-size:22px; font-weight:700; color:#16121F;">Rate the deal</div>
+              <div style="border:1px solid #ECEAF1; border-radius:18px; padding:16px 18px; margin-bottom:18px;">
+                <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Public listing fee</span><span style="font-weight:700; color:#16121F;">UGX 5,000</span></div>
+                <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Ad budget</span><span style="font-weight:700; color:#16121F;">{{ adBudgetLabel }}</span></div>
+                <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Platform service fee · 10%</span><span style="font-weight:700; color:#16121F;">{{ adServiceLabel }}</span></div>
+                <div style="height:1px; background:#F0EEF3; margin:10px 0;"></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:2px 0;"><span style="font-size:15px; font-weight:800; color:#16121F;">Total today</span><span style="font-size:20px; font-weight:800; color:{{ accent }}; letter-spacing:-.3px;">{{ promoTotalLabel }}</span></div>
               </div>
-              <div style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-                <div style="width:84px; height:84px; border-radius:50%; background:#F4EEFB; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:800; color:{{ accent }};">D</div>
-                <div style="font-size:20px; font-weight:800; color:#16121F; margin-top:14px;">Daniel Okello</div>
-                <div style="font-size:14px; color:#6E6880; margin-top:2px;">Room F12 · deal closed</div>
-                <div style="display:flex; gap:10px; margin-top:24px;">
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="{{ tenantAccent }}"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
-                  <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#D8D4E0" stroke-width="2"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9Z"></path></svg>
-                </div>
-                <textarea placeholder="Share how the deal went (optional)…" style="width:100%; height:110px; border:none; border-radius:16px; background:#F2F3F3; padding:14px 16px; font-family:Plus Jakarta Sans; font-size:15px; color:#16121F; resize:none; margin-top:26px;"></textarea>
+
+              <div style="display:flex; gap:11px; padding:13px 15px; border-radius:16px; background:#E7F2FF; margin-bottom:20px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B6FB0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+                <div style="font-size:12.5px; font-weight:600; color:#2B6FB0; line-height:1.5;">Ads are best-effort reach, not guaranteed leads. RentFlip keeps the 1% listing fee + 10% service fee; the rest goes to your chosen networks. Billed once via STK Push.</div>
               </div>
-              <div style="flex:1;"></div>
-              <button onClick="{{ goPaste }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Submit rating</button>
+              <button onClick="{{ promotePay }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">{{ promoCtaLabel }}</button>
             </div>
           </sc-if>
 
@@ -1331,7 +1310,7 @@
                 <div onClick="{{ goSettings }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
                 <div style="font-size:22px; font-weight:700; color:#16121F;">Verify your ID</div>
               </div>
-              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">Upload your national ID. We hold this securely — it's never shown on listings.</div>
+              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">Required before you move into a unit — tenants only. We hold it securely; it's never shown on listings or to other tenants.</div>
 
               <div style="display:flex; align-items:center; gap:11px; padding:13px 15px; border-radius:16px; background:#FBF1E0; margin-bottom:22px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B98700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
@@ -1385,12 +1364,6 @@
                 <div style="display:flex; align-items:center; gap:13px; padding:15px 16px;"><div style="width:38px; height:38px; border-radius:11px; background:#F4EEFB; display:flex; align-items:center; justify-content:center;">{{ icoMsg }}</div><span style="flex:1; font-size:16px; font-weight:600; color:#16121F;">SMS receipts</span><div style="width:48px; height:28px; border-radius:99px; background:{{ accent }}; display:flex; align-items:center; padding:0 4px; justify-content:flex-end;"><div style="width:20px; height:20px; border-radius:50%; background:#fff;"></div></div></div>
               </div>
 
-              <div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; margin:0 2px 10px;">BROKER</div>
-              <div onClick="{{ goBroker }}" style="display:flex; align-items:center; gap:13px; padding:16px; background:{{ accent }}; border-radius:16px; cursor:pointer; box-shadow:0 14px 26px -16px rgba(129,75,196,.85);">
-                <div style="width:40px; height:40px; border-radius:12px; background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center;">{{ icoMega }}</div>
-                <div style="flex:1;"><div style="font-size:16px; font-weight:800; color:#fff;">Become a broker</div><div style="font-size:12.5px; font-weight:600; color:rgba(255,255,255,.85);">Publish to All Listings &amp; earn commission</div></div>
-                <svg width="11" height="18" viewBox="0 0 11 18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1.5L9 9l-7.5 7.5"></path></svg>
-              </div>
             </div>
           </sc-if>
 
@@ -1452,10 +1425,10 @@
                 <div style="font-size:22px; font-weight:700; color:#16121F;">Contact</div>
               </div>
               <div style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:24px;">
-                <div style="width:88px; height:88px; border-radius:50%; background:#E7F2FF; display:flex; align-items:center; justify-content:center; font-size:32px; font-weight:800; color:#2B6FB0;">D</div>
+                <div style="width:88px; height:88px; border-radius:50%; background:#EFEDF4; display:flex; align-items:center; justify-content:center; font-size:32px; font-weight:800; color:#6E6880;">D</div>
                 <div style="font-size:22px; font-weight:800; color:#16121F; margin-top:14px;">Daniel Okello</div>
                 <div style="font-size:15px; color:#9A95A8; margin-top:2px;">+256 758 002 451</div>
-                <div style="padding:5px 14px; border-radius:99px; background:#E7F2FF; color:#2B6FB0; font-size:10px; font-weight:800; letter-spacing:.5px; margin-top:10px;">BROKER</div>
+                
               </div>
               <div style="display:flex; gap:12px; margin-bottom:24px;">
                 <div style="flex:1; padding:14px; border-radius:16px; background:#DFF7E7; display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E8A4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"></path></svg><span style="font-size:12px; font-weight:700; color:#1E8A4C;">Call</span></div>
@@ -1510,9 +1483,10 @@
                   <div style="width:60px; height:60px; border-radius:14px; background:url(assets/property-glasshouse.jpg) center/cover; flex:none;"></div>
                   <div style="flex:1;"><div style="font-size:18px; font-weight:800; color:#16121F;">Room F 78</div><div style="font-size:13px; color:#6E6880;">Lake View Apartments, Kiwatule</div><div style="font-size:16px; font-weight:800; color:{{ accent }}; margin-top:4px;">UGX 500K / month</div></div>
                 </div>
-                <div style="padding:12px 15px; border-radius:16px; background:#E7F2FF; color:#2B6FB0; font-size:13px; font-weight:600; line-height:1.5; margin-bottom:auto;">Joining binds your profile to this unit's ledger. Your landlord, Frank Kyakusse, will confirm the request.</div>
-                <button onClick="{{ joinAccept }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8); margin-top:20px;">Create account &amp; join</button>
+                <div style="display:flex; gap:11px; padding:12px 15px; border-radius:16px; background:#FBF1E0; margin-bottom:auto;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9A6B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:1px;"><rect x="4" y="10" width="16" height="11" rx="2.5"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg><div style="font-size:13px; font-weight:600; color:#9A6B1E; line-height:1.5;">Joining binds your profile to this unit's ledger. You'll verify your ID (KYC) to start the tenancy — your landlord, Frank Kyakusse, then confirms the request.</div></div>
+                <button onClick="{{ joinToKyc }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8); margin-top:20px;">Verify ID &amp; join</button>
                 <button onClick="{{ goVerifyPhone }}" style="width:100%; height:52px; border:1.5px solid #C9B6E6; border-radius:16px; background:#fff; color:{{ accent }}; font-family:Plus Jakarta Sans; font-size:16px; font-weight:700; cursor:pointer; margin-top:12px;">I already have an account</button>
+                <div onClick="{{ goPaste }}" style="text-align:center; margin-top:16px; font-size:13.5px; font-weight:700; color:#9A95A8; cursor:pointer;">Just browsing? Explore listings without KYC</div>
               </div>
             </div>
           </sc-if>
@@ -1578,9 +1552,9 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#814BC4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#814BC4&quot;,&quot;#2939A1&quot;,&quot;#7A4FB8&quot;,&quot;#5E3AA8&quot;]},&quot;tenantAccent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FEB201&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FEB201&quot;,&quot;#FF8D5E&quot;,&quot;#1E8A4C&quot;,&quot;#2B6FB0&quot;]},&quot;revenueScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Compact&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;Compact&quot;,&quot;Balanced&quot;,&quot;Bold&quot;]}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#5E3AA8&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#814BC4&quot;,&quot;#2939A1&quot;,&quot;#7A4FB8&quot;,&quot;#5E3AA8&quot;]},&quot;tenantAccent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FEB201&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FEB201&quot;,&quot;#FF8D5E&quot;,&quot;#1E8A4C&quot;,&quot;#2B6FB0&quot;]},&quot;revenueScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Compact&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;Compact&quot;,&quot;Balanced&quot;,&quot;Bold&quot;]}}">
 class Component extends DCLogic {
-  state = { screen: 'splash', role: 'landlord', onbStep: 0, ptab: 'outstanding', ttype: 'fixed', payMode: 'cash', pasteTab: 'private', gate: 'invoice', sheet: false, payTo: 'mtn' };
+  state = { screen: 'splash', role: 'landlord', onbStep: 0, ptab: 'outstanding', ttype: 'fixed', payMode: 'cash', pasteTab: 'private', gate: 'invoice', sheet: false, nav: false, payTo: 'mtn', adBudget: 0 };
 
   ICONS = {
     'download': '<path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
@@ -1661,7 +1635,7 @@ class Component extends DCLogic {
       thome:'tenant', troom:'tenant', tlog:'tenant', tpending:'tenant', tsuccess:'tenant',
     };
     if (FORCE[screen]) role = FORCE[screen];
-    this.setState({ screen, role, sheet: false, onbStep: screen === 'onboarding' ? 0 : this.state.onbStep });
+    this.setState({ screen, role, sheet: false, nav: false, onbStep: screen === 'onboarding' ? 0 : this.state.onbStep });
     const sc = document.querySelector('.rf-scroll'); if (sc) sc.scrollTop = 0;
   }
 
@@ -1683,7 +1657,7 @@ class Component extends DCLogic {
       { name: 'Get started', items: [['splash','Splash'],['onboarding','Onboarding'],['verifyphone','Verify phone'],['otp','Enter OTP'],['join','Join via link']] },
       { name: 'Landlord', items: [['lhome','Home'],['lproperty','Property detail'],['lroom','Room detail'],['payments','Payments'],['lverify','Verify payment'],['lcash','Record cash'],['addtenant','New tenant'],['addunit','New rental unit'],['addproperty','New property'],['invite','Invite link'],['vacate','Mark vacant'],['lsuccess','Approved']] },
       { name: 'Tenant', items: [['thome','Home'],['troom','Room detail'],['tlog','Log payment'],['tpending','Awaiting verify'],['tsuccess','Receipt']] },
-      { name: 'Listings Board', items: [['paste','My / All Listings'],['listingdetail','Listing detail'],['listing','Broker link'],['postlisting','Post a listing'],['broker','Broker upgrade'],['chat','Deal chat'],['rate','Rate broker']] },
+      { name: 'Listings Board', items: [['paste','My / All Listings'],['listingdetail','Listing detail'],['postlisting','Post a listing'],['promote','Promote listing'],['chat','Listing enquiry']] },
       { name: 'People & billing', items: [['people','People'],['contact','Contact detail'],['invoice','Platform invoice'],['lockdown','Lockdown gate']] },
       { name: 'Account', items: [['profile','Profile'],['tpersonal','Personal details'],['settings','Settings'],['paymodes','Payment methods'],['kyc','KYC / ID'],['notifs','Notifications'],['reports','Reports'],['faq','FAQ']] },
     ];
@@ -1784,17 +1758,21 @@ class Component extends DCLogic {
     const peopleRaw = [
       { name:'Ephraim Matumbwe', phone:'+256 772 113 904', role:'TENANT', initial:'E' },
       { name:'Sarah Nakato', phone:'+256 701 884 220', role:'LANDLORD', initial:'S' },
-      { name:'Daniel Okello', phone:'+256 758 002 451', role:'BROKER', initial:'D' },
+      { name:'Daniel Okello', phone:'+256 758 002 451', role:'', initial:'D' },
       { name:'Kevin Kaloboozi', phone:'+256 776 540 118', role:'TENANT', initial:'K' },
       { name:'Mulongo Kato', phone:'+256 712 309 887', role:'TENANT', initial:'M' },
     ];
-    const peopleBadge = { TENANT:['#FBF1E0','#9A6B1E'], LANDLORD:['#E7DEF6','#814BC4'], BROKER:['#E7F2FF','#2B6FB0'] };
-    const peopleAvatar = { TENANT:['#FBF1E0','#9A6B1E'], LANDLORD:['#E7DEF6','#814BC4'], BROKER:['#E7F2FF','#2B6FB0'] };
-    const peopleList = peopleRaw.map(p => ({
-      ...p,
-      avatarBg: peopleAvatar[p.role][0], avatarFg: peopleAvatar[p.role][1],
-      badgeStyle: 'padding:5px 12px; border-radius:99px; font-size:10px; font-weight:800; letter-spacing:.5px; flex:none; background:' + peopleBadge[p.role][0] + '; color:' + peopleBadge[p.role][1] + ';',
-    }));
+    const peopleBadge = { TENANT:['#FBF1E0','#9A6B1E'], LANDLORD:['#E7DEF6','#814BC4'], '':['#EFEDF4','#6E6880'] };
+    const peopleAvatar = { TENANT:['#FBF1E0','#9A6B1E'], LANDLORD:['#E7DEF6','#814BC4'], '':['#EFEDF4','#6E6880'] };
+    const peopleList = peopleRaw.map(p => {
+      const showTag = p.role === 'TENANT' || p.role === 'LANDLORD';
+      const av = peopleAvatar[p.role] || peopleAvatar[''];
+      const bd = peopleBadge[p.role] || peopleBadge[''];
+      return { ...p,
+        avatarBg: av[0], avatarFg: av[1], showTag,
+        badgeStyle: 'padding:5px 12px; border-radius:99px; font-size:10px; font-weight:800; letter-spacing:.5px; flex:none; background:' + bd[0] + '; color:' + bd[1] + ';' + (showTag ? '' : ' display:none;'),
+      };
+    });
 
     // ---- Payments hub verify queue ----
     const verifyQueue = [
@@ -1844,23 +1822,24 @@ class Component extends DCLogic {
     // ===== feature-screen data =====
     const pasteTab = this.state.pasteTab;
     const privateListings = [
-      { title:'2-Bedroom apartment', price:'UGX 600K', loc:'Kiwatule', photo:img('property-glasshouse.jpg'), broker:'Daniel Okello', rating:'4.8', featured:false },
-      { title:'Single room · self-contained', price:'UGX 280K', loc:'Kabuusu', photo:img('property-kitchen.jpg'), broker:'Listed by you', rating:'', featured:false },
+      { title:'2-Bedroom apartment', price:'UGX 600K', loc:'Kiwatule', photo:img('property-glasshouse.jpg'), owner:'Listed by you', featured:false },
+      { title:'Single room · self-contained', price:'UGX 280K', loc:'Kabuusu', photo:img('property-kitchen.jpg'), owner:'Listed by you', featured:false },
     ];
     const globalListings = [
-      { title:'Executive studio', price:'UGX 850K', loc:'Naalya', photo:img('property-skyline.jpg'), broker:'Sarah Nakato', rating:'4.9', featured:true },
-      { title:'3-Bedroom bungalow', price:'UGX 1.4M', loc:'Kira', photo:img('property-villa-night.jpg'), broker:'Brian Mugume', rating:'4.6', featured:false },
-      { title:'Shop space · 24m²', price:'UGX 700K', loc:'Ntinda', photo:img('property-kitchen.jpg'), broker:'Daniel Okello', rating:'4.8', featured:true },
+      { title:'Executive studio', price:'UGX 850K', loc:'Naalya', photo:img('property-skyline.jpg'), owner:'Sarah Nakato', featured:true },
+      { title:'3-Bedroom bungalow', price:'UGX 1.4M', loc:'Kira', photo:img('property-villa-night.jpg'), owner:'Brian Mugume', featured:false },
+      { title:'Shop space · 24m²', price:'UGX 700K', loc:'Ntinda', photo:img('property-kitchen.jpg'), owner:'Joan Apio', featured:true },
     ];
     const pasteRaw = pasteTab==='global' ? globalListings : privateListings;
     const pasteListings = pasteRaw.map(l => ({
       ...l,
       mine: pasteTab!=='global',
-      open: () => this.go(pasteTab==='global' ? 'listingdetail' : 'listing'),
-      promote: () => this.go('broker'),
-      share: () => this.go('invite'),
-      hasRating: !!l.rating,
-      starEl: this.ic('star', { size:13, color:TACC, fill:TACC }),
+      notMine: pasteTab==='global',
+      ownerInitial: (l.owner || '?').charAt(0),
+      open: () => this.go(pasteTab==='global' ? 'listingdetail' : 'promote'),
+      promote: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.go('promote'); },
+      share: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.go('invite'); },
+      enquire: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.go('chat'); },
     }));
     // ---- All Listings filter chips ----
     const lbFilter = this.state.lbFilter || 'All';
@@ -1873,11 +1852,11 @@ class Component extends DCLogic {
     }));
 
     const chatMsgs = [
-      { side:'in', text:'Hi! I have a client keen on Room F12 — is it still vacant?', photo:'' },
-      { side:'out', text:'Yes, still vacant. Asking UGX 600K a month.', photo:'' },
-      { side:'in', text:'Perfect. Sharing their ID for your records.', photo:img('property-kitchen.jpg') },
-      { side:'out', text:'Looks good. Let\u2019s close it.', photo:'' },
-    ].map(m => ({
+      { side:'in', text:'Hi! Is the Executive studio in Naalya still available?', photo:'' },
+      { side:'out', text:'Yes, it\u2019s still vacant \u2014 UGX 850K a month, water inclusive.', photo:'' },
+      { side:'in', text:'Great. Could I come by for a viewing this weekend?', photo:img('property-skyline.jpg') },
+      { side:'out', text:'Sure, Saturday morning works. I\u2019ll share the exact location.', photo:'' },
+        ].map(m => ({
       ...m,
       hasPhoto: !!m.photo,
       rowStyle: 'display:flex; ' + (m.side==='out' ? 'justify-content:flex-end;' : 'justify-content:flex-start;'),
@@ -1917,18 +1896,31 @@ class Component extends DCLogic {
       { icon:'check-circle', title:'Payment approved', body:'Mulongo Kato\u2019s payment was approved and receipted.', time:'2d', tone:'success', unread:false },
     ].map(n => ({ ...n, iconEl:this.ic(n.icon,{size:20,color:tone3Fg[n.tone]}), chipBg:tone3Bg[n.tone], dot: n.unread }));
 
-    // broker tiers
-    const brokerTiers = [
-      { name:'Starter', price:'UGX 30,000', range:'Units under 500K / month', popular:false },
-      { name:'Standard', price:'UGX 80,000', range:'Units 500K – 2M / month', popular:true },
-      { name:'Premium', price:'UGX 200,000', range:'Units above 2M / month', popular:false },
+    // promote listing — ad channels + budget
+    const promoChannels = [
+      { name:'Google', note:'Search & display', tag:'G', bg:'#E7F2FF', fg:'#2B6FB0' },
+      { name:'Facebook', note:'Marketplace & feed', tag:'f', bg:'#E7EEFF', fg:'#2B59B0' },
+      { name:'WhatsApp', note:'Status & broadcast', tag:'W', bg:'#DFF7E7', fg:'#1E8A4C' },
+      { name:'Instagram', note:'Feed & stories', tag:'IG', bg:'#FBE9F0', fg:'#C5417B' },
     ];
-    const brokerTier = this.state.brokerTier || 'Standard';
-    const brokerTierList = brokerTiers.map(t => ({
-      ...t, selected: t.name===brokerTier,
-      pick: () => this.setState({ brokerTier:t.name }),
-      cardStyle: 'border:2px solid ' + (t.name===brokerTier?ACC:'#ECEAF1') + '; border-radius:20px; padding:18px; cursor:pointer; background:' + (t.name===brokerTier?'#FAF8FD':'#fff') + ';',
+    const icoStarP = this.ic('star', { size:18, color:'#B98700', fill:'#B98700' });
+    const adBudget = this.state.adBudget || 0;
+    const fmtU = (n) => 'UGX ' + n.toLocaleString('en-US');
+    const listingFee = 5000;
+    const adService = Math.round(adBudget * 0.10);
+    const promoTotal = listingFee + adBudget + adService;
+    const reachMap = { 0:'No paid ads', 20000:'~2,000–4,000 renters', 50000:'~6,000–9,000 renters', 100000:'~12,000–18,000 renters' };
+    const promoBudgets = [0,20000,50000,100000].map(v => ({
+      value: v,
+      label: v===0 ? 'No ads' : fmtU(v),
+      reach: reachMap[v],
+      pick: () => this.setState({ adBudget: v }),
+      cardStyle: 'border:2px solid ' + (adBudget===v?ACC:'#ECEAF1') + '; border-radius:16px; padding:13px 15px; cursor:pointer; background:' + (adBudget===v?'#F4EEFB':'#fff') + ';',
     }));
+    const adBudgetLabel = adBudget ? fmtU(adBudget) : 'None';
+    const adServiceLabel = fmtU(adService);
+    const promoTotalLabel = fmtU(promoTotal);
+    const promoCtaLabel = 'Pay ' + promoTotalLabel + ' & promote';
 
     // payment methods config (landlord)
     const payMethodsCfg = [
@@ -1942,9 +1934,10 @@ class Component extends DCLogic {
 
     // FAQ
     const faqList = [
-      { q:'Does RentFlip move my money?', a:'No. RentFlip only records payments. You pay your landlord directly via MoMo, Airtel or bank \u2014 we keep the receipt and ledger.' },
-      { q:'How do I get a receipt?', a:'Once your landlord approves a logged payment, a receipt is generated and texted to you. Download it any time from the room\u2019s history.' },
-      { q:'What is a broker?', a:'Any landlord or tenant who upgrades to publish listings on All Listings and earn commission when a tenancy starts through them.' },
+      { q:'Does RentFlip move my money?', a:'No. RentFlip only records payments. You pay your landlord directly via MoMo, Airtel or bank — we keep the receipt and ledger.' },
+      { q:'How do I get a receipt?', a:'Once your landlord approves a logged payment, a receipt is generated and texted to you. Download it any time from the room history.' },
+      { q:'How do I list my unit publicly?', a:'Post it to My Listings for free, then tap Promote. A one-time 1% listing fee makes it public &amp; Featured; you can add an optional ad budget to reach renters in your area on Google, Facebook, Instagram and WhatsApp.' },
+      { q:'When do I need to verify my ID (KYC)?', a:'Tenants only, and only when joining a unit. You can sign up and browse listings without it — KYC is required at the point you start a tenancy in a specific unit.' },
       { q:'How is the platform fee calculated?', a:'A small percentage of cleared and approved rent volume per 30-day cycle, billed to landlords. You never pay per transaction.' },
     ];
 
@@ -1982,15 +1975,16 @@ class Component extends DCLogic {
       bookmarkEl: this.ic('bookmark',{size:18,color:ACC}),
       // post a listing
       isPostListing: s==='postlisting', goPostListing: g3('postlisting'),
-      // broker upgrade
-      isBroker: s==='broker', goBroker: g3('broker'), brokerTierList,
-      brokerToKyc: g3('kyc'),
-      // rate broker
-      isRate: s==='rate', goRate: g3('rate'),
+      // promote listing
+      isPromote: s==='promote', goPromote: g3('promote'), promotePay: g3('paste'),
+      promoChannels, promoBudgets, adBudgetLabel, adServiceLabel, promoTotalLabel, promoCtaLabel,
       // notifications
       isNotifs: s==='notifs', notifList, goNotifs: g3('notifs'),
-      // kyc
-      isKyc: s==='kyc', goKyc: g3('kyc'), kycDone: g3('settings'),
+      // kyc (tenant move-in; skippable until joining a unit)
+      isKyc: s==='kyc',
+      goKyc: () => { this.setState({ kycReturn:'settings' }); this.go('kyc'); },
+      joinToKyc: () => { this.setState({ kycReturn:'thome' }); this.go('kyc'); },
+      kycDone: () => this.go(this.state.kycReturn || 'settings'),
       // settings
       isSettings: s==='settings', goSettings: g3('settings'), currencies, currentCurrency: cur,
       goPayMethods: g3('paymodes'),
@@ -2036,6 +2030,9 @@ class Component extends DCLogic {
       isSheet: this.state.sheet,
       openSheet: () => this.setState({ sheet: true }),
       closeSheet: () => this.setState({ sheet: false }),
+      isNavOpen: this.state.nav,
+      openNav: () => this.setState({ nav: true }),
+      closeNav: () => this.setState({ nav: false }),
       stopTap: (e) => { e.stopPropagation(); },
       sheetCreate, sheetBrowse,
       inviteTileIcon: this.ic('link', { size:20, color:ACC }),
@@ -2126,26 +2123,22 @@ class Component extends DCLogic {
       isTPending: s==='tpending',
       isInvoice: s==='invoice',
       isPaste: s==='paste',
-      isListing: s==='listing',
       isChat: s==='chat',
       isLockdown: s==='lockdown',
       isInvite: s==='invite',
       goLVerify: go('lverify'),
       goInvoice: go('invoice'),
       goPaste: go('paste'),
-      goListing: go('listing'),
-      goChat: go('chat'),
       goInvite: go('invite'),
       approvePay: go('lsuccess'),
       submitLog: go('tpending'),
       pendingDone: go('thome'),
-      revokeBroker: go('paste'),
       pasteListings, chatMsgs,
       pastePrivStyle: 'flex:1; height:46px; border:none; border-radius:14px; font-family:Plus Jakarta Sans; font-size:14px; font-weight:700; cursor:pointer; background:' + (pasteTab!=='global'?ACC:'transparent') + '; color:' + (pasteTab!=='global'?'#fff':'#16121F') + ';',
       pasteGlobStyle: 'flex:1; height:46px; border:none; border-radius:14px; font-family:Plus Jakarta Sans; font-size:14px; font-weight:700; cursor:pointer; background:' + (pasteTab==='global'?ACC:'transparent') + '; color:' + (pasteTab==='global'?'#fff':'#16121F') + ';',
       setPastePrivate: () => this.setState({ pasteTab:'private' }),
       setPasteGlobal: () => this.setState({ pasteTab:'global' }),
-      pasteTierNote: pasteTab==='global' ? 'Public board — listings posted by verified brokers.' : 'Your private board — only you can see these.',
+      pasteTierNote: pasteTab==='global' ? 'Public board — promoted vacant units near you.' : 'Your private board — only you can see these.',
       pasteIsGlobal: pasteTab==='global',
       filterChips,
       gateInvoice: gate !== 'sync',
