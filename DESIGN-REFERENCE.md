@@ -1,7 +1,7 @@
 # MAAMA CIELO NURSERY SCHOOL — Design Reference
 
 > **Source**: Exported from Claude Design (desktop + phone mockups)
-> **Original files**: [`_raw/desktop.dc.html`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/desktop.dc.html), [`_raw/phone.dc.html`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/phone.dc.html), [`_raw/support.js`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/support.js)
+> **Original files**: [`_raw/desktop.dc.html`](file:///E:/projects/nextjs/MAAMA CIELO NURSERY SCHOOL%20EDUCATION%20SERVICES/MAAMA CIELO NURSERY SCHOOL%20design%20files/_raw/desktop.dc.html), [`_raw/phone.dc.html`](file:///E:/projects/nextjs/MAAMA CIELO NURSERY SCHOOL%20EDUCATION%20SERVICES/MAAMA CIELO NURSERY SCHOOL%20design%20files/_raw/phone.dc.html), [`_raw/support.js`](file:///E:/projects/nextjs/MAAMA CIELO NURSERY SCHOOL%20EDUCATION%20SERVICES/MAAMA CIELO NURSERY SCHOOL%20design%20files/_raw/support.js)
 > **Motto**: _Arise and Shine_
 
 ---
@@ -18,7 +18,7 @@
 | **Yellow accent** | `#F3EC29` | CTA buttons, yellow highlight, section labels, selection bg |
 | **Yellow accent (hover)** | `#D4CD1B` | CTA hover state |
 | **Page background** | `#F8FAF5` | Main body background (soft green-white) |
-| **Light green panel** | `#E8F0E4` | Intro section, Why Greendale section bg |
+| **Light green panel** | `#E8F0E4` | Intro section, Why MAAMA CIELO NURSERY SCHOOL section bg |
 | **Pale green panel** | `#D1E0CA` | Nav panel bg, Transport section bg, placeholder image bg |
 | **White** | `#FFFFFF` | Card bg, logo bg, input bg |
 | **Selection bg** | `#F3EC29` with text `#0B4625` | Text selection |
@@ -110,7 +110,7 @@ Full-screen fixed overlay. Background `#116A3A` with repeating `pencilbg.svg` pa
 
 **Content**:
 - H2: "Nurturing Tomorrow's Leaders Today" (Young Serif, uppercase)
-- Body text: "For over 7 years Greendale has grown from a humble nursery..."
+- Body text: "For over 7 years MAAMA CIELO NURSERY SCHOOL has grown from a humble nursery..."
 - Image: `opportunities-bg.jpeg` (mix-blend-mode: multiply, opacity 0.92)
 
 **Stats row** (4 items, 2px green top border each):
@@ -186,9 +186,9 @@ Each card: green bg (`#116A3A`), 2px white/25% border, image (placeholder), kick
 
 ---
 
-### Section 09 — Life at Greendale (Gallery)
+### Section 09 — Life at MAAMA CIELO NURSERY SCHOOL (Gallery)
 
-**Label**: `05 — Life at Greendale`
+**Label**: `05 — Life at MAAMA CIELO NURSERY SCHOOL`
 **Background**: `#F8FAF5`
 
 - H2: "Classrooms, sport and school life"
@@ -202,9 +202,9 @@ Each card: green bg (`#116A3A`), 2px white/25% border, image (placeholder), kick
 
 ---
 
-### Section 10 — Why Greendale
+### Section 10 — Why MAAMA CIELO NURSERY SCHOOL
 
-**Label**: `06 — Why Greendale`
+**Label**: `06 — Why MAAMA CIELO NURSERY SCHOOL`
 **Background**: `#E8F0E4`, 2px green top border
 
 H2: "Four reasons parents choose us"
@@ -299,7 +299,7 @@ Card: green bg (`#116A3A`), 2px white/25% border, min-height 280px. Hover: bg �
 **Label**: `10 — News & events`
 **Background**: `#F8FAF5`
 
-H2: "Latest from Greendale" + "All news" link
+H2: "Latest from MAAMA CIELO NURSERY SCHOOL" + "All news" link
 
 **Three news items** (each with 1px green/25% top border):
 
@@ -317,7 +317,7 @@ H2: "Latest from Greendale" + "All news" link
 
 **Background**: `#F3EC29` (yellow), text `#0B4625`
 
-H2: "Ready to join Greendale?" (Young Serif, uppercase, large)
+H2: "Ready to join MAAMA CIELO NURSERY SCHOOL?" (Young Serif, uppercase, large)
 Body: "Applications for Term I are open..."
 
 **Two CTAs**:
@@ -431,7 +431,7 @@ Input style: 2px green border, white bg, 14px padding, inherit font, green text,
 | **Location** | Kasubi–Rubaga Division, Along Kimera Road, Near Makerere University |
 | **Phone** | +256 772 330488 |
 | **WhatsApp** | wa.me/256772330488 |
-| **TikTok** | @greendale |
+| **TikTok** | @MAAMA CIELO NURSERY SCHOOL |
 
 ---
 
