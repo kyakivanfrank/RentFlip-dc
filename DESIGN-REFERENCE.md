@@ -1,4 +1,4 @@
-# Greendale Education Services — Design Reference
+# MAAMA CIELO NURSERY SCHOOL — Design Reference
 
 > **Source**: Exported from Claude Design (desktop + phone mockups)
 > **Original files**: [`_raw/desktop.dc.html`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/desktop.dc.html), [`_raw/phone.dc.html`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/phone.dc.html), [`_raw/support.js`](file:///E:/projects/nextjs/GREENDALE%20EDUCATION%20SERVICES/greendale%20design%20files/_raw/support.js)
@@ -93,7 +93,7 @@ Full-screen fixed overlay. Background `#116A3A` with repeating `pencilbg.svg` pa
 
 **Content** (bottom-aligned):
 - Yellow label: "— Arise and Shine" (with 34px yellow line before text)
-- H1: "GREENDALE EDUCATION SERVICES" (uppercase, Young Serif, white, text-shadow)
+- H1: "MAAMA CIELO NURSERY SCHOOL" (uppercase, Young Serif, white, text-shadow)
 - Subtitle: "A nursery and primary school on Kimera Road, Kasubi — quality holistic education..."
 - Two CTAs: "Apply for 2027" (yellow solid) + "Watch the school film" (white outline, play icon)
 - Scroll indicator: blinking "Scroll to explore" with down-arrow icon
@@ -341,7 +341,7 @@ Body: "Applications for Term I are open..."
 3. **Admissions**: How to apply, Fees structure, Schedule a visit, FAQs
 4. **Explore**: About us, Gallery, News & events, School calendar
 
-**Bottom bar**: "© 2026 Greendale Education Services. All rights reserved." + "Arise and Shine"
+**Bottom bar**: "© 2026 MAAMA CIELO NURSERY SCHOOL. All rights reserved." + "Arise and Shine"
 
 **Mobile**: 2-column footer links. Floating social FAB (TikTok, WhatsApp, Apply) bottom-right.
 
@@ -426,7 +426,7 @@ Input style: 2px green border, white bg, 14px padding, inherit font, green text,
 
 | | |
 |---|---|
-| **School name** | Greendale Education Services |
+| **School name** | MAAMA CIELO NURSERY SCHOOL |
 | **Address** | P.O. Box 35627, Kampala |
 | **Location** | Kasubi–Rubaga Division, Along Kimera Road, Near Makerere University |
 | **Phone** | +256 772 330488 |
