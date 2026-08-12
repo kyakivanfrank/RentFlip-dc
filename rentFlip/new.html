@@ -1133,7 +1133,7 @@
             </div>
           </sc-if>
 
-          <!-- ============ LISTING DETAIL (PUBLIC) ============ -->
+          <!-- ============ LISTING DETAIL (assets) ============ -->
           <sc-if value="{{ isListingDetail }}" hint-placeholder-val="{{ true }}">
             <div data-screen-label="Listings Board · Listing detail" style="min-height:786px; background:#fff; padding:0 0 40px; animation:rfFade .35s ease;">
               <div style="position:relative; height:300px; background:url(assets/property-skyline.jpg) center/cover;">
@@ -1199,7 +1199,7 @@
               <div style="font-size:11px; font-weight:800; letter-spacing:.5px; color:#16121F; margin-bottom:10px;">VISIBILITY</div>
               <div style="border:1px solid #ECEAF1; border-radius:18px; overflow:hidden; margin-bottom:24px;">
                 <div style="display:flex; align-items:center; gap:12px; padding:15px 16px; border-bottom:1px solid #F0EEF3;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid #D8D4E0; flex:none;"></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">My Listings</div><div style="font-size:12.5px; color:#6E6880;">Private — only you see it. Free.</div></div></div>
-                <div style="display:flex; align-items:center; gap:12px; padding:15px 16px;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid {{ accent }}; flex:none; display:flex; align-items:center; justify-content:center;"><div style="width:11px; height:11px; border-radius:50%; background:{{ accent }};"></div></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">All Listings</div><div style="font-size:12.5px; color:#6E6880;">Public — 1% of monthly rent to promote.</div></div></div>
+                <div style="display:flex; align-items:center; gap:12px; padding:15px 16px;"><div style="width:22px; height:22px; border-radius:50%; border:2px solid {{ accent }}; flex:none; display:flex; align-items:center; justify-content:center;"><div style="width:11px; height:11px; border-radius:50%; background:{{ accent }};"></div></div><div style="flex:1;"><div style="font-size:15px; font-weight:700; color:#16121F;">All Listings</div><div style="font-size:12.5px; color:#6E6880;">assets — 1% of monthly rent to promote.</div></div></div>
               </div>
               <button onClick="{{ goPromote }}" style="width:100%; height:56px; border:none; border-radius:16px; background:{{ accent }}; color:#fff; font-family:Plus Jakarta Sans; font-size:17px; font-weight:700; cursor:pointer; box-shadow:0 14px 26px -12px rgba(129,75,196,.8);">Publish listing</button>
             </div>
@@ -1212,7 +1212,7 @@
                 <div onClick="{{ goPaste }}" style="cursor:pointer; padding:4px;"><svg width="22" height="20" viewBox="0 0 24 24" fill="none" stroke="#16121F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
                 <div style="font-size:22px; font-weight:700; color:#16121F;">Promote listing</div>
               </div>
-              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">List this unit publicly &amp; reach the right renters.</div>
+              <div style="font-size:14px; color:#6E6880; margin:0 2px 22px 40px;">List this unit assetsly &amp; reach the right renters.</div>
 
               <div style="display:flex; align-items:center; gap:14px; padding:14px; border-radius:18px; background:#F4EEFB; margin-bottom:22px;">
                 <div style="width:54px; height:54px; border-radius:14px; background:url(assets/property-glasshouse.jpg) center/cover; flex:none;"></div>
@@ -1220,9 +1220,9 @@
                 <div style="text-align:right;"><div style="font-size:16px; font-weight:800; color:{{ accent }};">UGX 500K</div><div style="font-size:11px; color:#9A95A8;">/ month</div></div>
               </div>
 
-              <div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; margin:0 2px 12px;">PUBLIC LISTING FEE</div>
+              <div style="font-size:11px; font-weight:800; letter-spacing:1.4px; color:#9A95A8; margin:0 2px 12px;">assets LISTING FEE</div>
               <div style="display:flex; align-items:center; justify-content:space-between; border:1px solid #ECEAF1; border-radius:18px; padding:16px 18px; margin-bottom:22px;">
-                <div style="flex:1; min-width:0; padding-right:12px;"><div style="font-size:15px; font-weight:800; color:#16121F;">1% of monthly rent</div><div style="font-size:12.5px; color:#6E6880; margin-top:2px; line-height:1.45;">Charged each time you list this unit publicly — including if it’s taken and re-listed later.</div></div>
+                <div style="flex:1; min-width:0; padding-right:12px;"><div style="font-size:15px; font-weight:800; color:#16121F;">1% of monthly rent</div><div style="font-size:12.5px; color:#6E6880; margin-top:2px; line-height:1.45;">Charged each time you list this unit assetsly — including if it’s taken and re-listed later.</div></div>
                 <div style="font-size:18px; font-weight:800; color:{{ accent }}; flex:none;">UGX 5,000</div>
               </div>
 
@@ -1253,7 +1253,7 @@
               </div>
 
               <div style="border:1px solid #ECEAF1; border-radius:18px; padding:16px 18px; margin-bottom:18px;">
-                <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Public listing fee</span><span style="font-weight:700; color:#16121F;">UGX 5,000</span></div>
+                <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">assets listing fee</span><span style="font-weight:700; color:#16121F;">UGX 5,000</span></div>
                 <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Ad budget</span><span style="font-weight:700; color:#16121F;">{{ adBudgetLabel }}</span></div>
                 <div style="display:flex; justify-content:space-between; padding:4px 0; font-size:14px;"><span style="color:#6E6880;">Platform service fee · 10%</span><span style="font-weight:700; color:#16121F;">{{ adServiceLabel }}</span></div>
                 <div style="height:1px; background:#F0EEF3; margin:10px 0;"></div>
@@ -1925,7 +1925,7 @@ class Component extends DCLogic {
     const faqList = [
       { q:'Does RentFlip move my money?', a:'No. RentFlip only records payments. You pay your landlord directly via MoMo, Airtel or bank — we keep the receipt and ledger.' },
       { q:'How do I get a receipt?', a:'Once your landlord approves a logged payment, a receipt is generated and texted to you. Download it any time from the room history.' },
-      { q:'How do I list my unit publicly?', a:'Post it to My Listings for free, then tap Promote. A one-time 1% listing fee makes it public &amp; Featured; you can add an optional ad budget to reach renters in your area on Google, Facebook, Instagram and WhatsApp.' },
+      { q:'How do I list my unit assetsly?', a:'Post it to My Listings for free, then tap Promote. A one-time 1% listing fee makes it assets &amp; Featured; you can add an optional ad budget to reach renters in your area on Google, Facebook, Instagram and WhatsApp.' },
       { q:'When do I need to verify my ID (KYC)?', a:'Tenants only, and only when joining a unit. You can sign up and browse listings without it — KYC is required at the point you start a tenancy in a specific unit.' },
       { q:'How is the platform fee calculated?', a:'A small percentage of cleared and approved rent volume per 30-day cycle, billed to landlords. You never pay per transaction.' },
     ];
@@ -2124,7 +2124,7 @@ class Component extends DCLogic {
       pasteGlobStyle: 'flex:1; height:46px; border:none; border-radius:14px; font-family:Plus Jakarta Sans; font-size:14px; font-weight:700; cursor:pointer; background:' + (pasteTab==='global'?ACC:'transparent') + '; color:' + (pasteTab==='global'?'#fff':'#16121F') + ';',
       setPastePrivate: () => this.setState({ pasteTab:'private' }),
       setPasteGlobal: () => this.setState({ pasteTab:'global' }),
-      pasteTierNote: pasteTab==='global' ? 'Public board — promoted vacant units near you.' : 'Your private board — only you can see these.',
+      pasteTierNote: pasteTab==='global' ? 'assets board — promoted vacant units near you.' : 'Your private board — only you can see these.',
       pasteIsGlobal: pasteTab==='global',
       filterChips,
       gateInvoice: gate !== 'sync',

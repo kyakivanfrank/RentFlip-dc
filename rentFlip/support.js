@@ -3,7 +3,7 @@
 (() => {
   var __defProp = Object.defineProperty;
   var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-  var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+  var __assetsField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 
   // src/react.ts
   function getReact() {
@@ -679,10 +679,10 @@
   // src/logic.ts
   var StreamableLogic = class {
     constructor(props) {
-      __publicField(this, "props");
-      __publicField(this, "state", {});
+      __assetsField(this, "props");
+      __assetsField(this, "state", {});
       /** Back-pointer to the wrapper component, installed after construction. */
-      __publicField(this, "__host");
+      __assetsField(this, "__host");
       this.props = props || {};
     }
     setState(update, cb) {
@@ -754,28 +754,28 @@
     class StreamableComponent extends React.Component {
       constructor(props) {
         super(props);
-        __publicField(this, "__name");
-        __publicField(this, "__sub");
-        __publicField(this, "__needsDidMount", false);
+        __assetsField(this, "__name");
+        __assetsField(this, "__sub");
+        __assetsField(this, "__needsDidMount", false);
         /** Snapshot of the registry's streaming flags taken at render time —
          *  builders read it off the RenderCtx (this) to pick placeholder vs
          *  render-nothing for unresolved values. */
-        __publicField(this, "__streamingNow", false);
-        __publicField(this, "__htmlStreamingNow", false);
+        __assetsField(this, "__streamingNow", false);
+        __assetsField(this, "__htmlStreamingNow", false);
         /** When a construct throws, remember the (class, registry.ver, props)
          *  triple so render-time reconcile doesn't re-attempt it on every parent
          *  re-render. A registry bump (new class, template, external module
          *  resolving via bumpAll) changes `ver` and breaks the memo so an
          *  env-dependent constructor can self-heal. */
-        __publicField(this, "__failedLogic", null);
-        __publicField(this, "__failedUserProps", null);
-        __publicField(this, "__failedVer", -1);
+        __assetsField(this, "__failedLogic", null);
+        __assetsField(this, "__failedUserProps", null);
+        __assetsField(this, "__failedVer", -1);
         /** Per-instance constructor error — kept here (not on the registry entry)
          *  so one instance's successful construct can't hide a sibling's failure,
          *  and a construct can never wipe an eval error `updateJs` recorded on
          *  `r.logicError`. */
-        __publicField(this, "__ctorError", null);
-        __publicField(this, "logic");
+        __assetsField(this, "__ctorError", null);
+        __assetsField(this, "logic");
         this.__name = props.__name;
         this.state = { __v: 0, __err: null };
         this.__sub = () => {
@@ -968,7 +968,7 @@
         );
       }
     }
-    __publicField(StreamableComponent, "contextType", AncestorContext);
+    __assetsField(StreamableComponent, "contextType", AncestorContext);
     const named = /* @__PURE__ */ new Map();
     function getDC(name) {
       const hit = named.get(name);

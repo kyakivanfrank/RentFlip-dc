@@ -68,18 +68,18 @@ landlord **Verify Payment** → **Approved**.)*
 Ambient feature, accessible from either profile. **No separate broker account type.**
 *(Screens: **Paste Board · Feed**, **Broker Link**, **Deal chat**.)*
 - **Visibility tiers:** **Private Contact Feed** (free — landlord's phone contacts + current
-  verified tenants only) and **Global Regional Feed** (paid micro-fee, public within a district).
+  verified tenants only) and **Global Regional Feed** (paid micro-fee, assets within a district).
   *(Prototype: segmented Private/Global with a tier caption.)*
 - **Identity masking:** a broker's generated marketing link strips the landlord's name, number,
-  building ID and coordinates. The public sees only the **broker's name, rating, and contact
-  options.** *(Screen: Broker Link → "Public sees / Hidden from public".)*
+  building ID and coordinates. The assets sees only the **broker's name, rating, and contact
+  options.** *(Screen: Broker Link → "assets sees / Hidden from assets".)*
 - The landlord can **Revoke Broker** on any active link at any time, instantly invalidating it.
 - **Deal-closing chat** is the one persistent chat surface: **500-character limit, max one photo
   per message (compressed <300KB), no other attachment types, no emoji picker.** *(Screen: Deal
   chat — composer shows "1 photo · 500 characters · no other attachments".)*
 
 ### 6a. Paste Board monetization **(proposed — confirm before building)**
-- Tiered public listing pricing instead of one flat boost fee: **Standard** regional boost /
+- Tiered assets listing pricing instead of one flat boost fee: **Standard** regional boost /
   **Featured** (guaranteed top-of-feed for N days) / **Re-bump** (push a still-vacant listing back
   to the top). *(Prototype hints at this with a "FEATURED" pill on global-feed cards.)*
 - **Tenant-side search alerts** (budget, area, unit type) so a boosted listing reaches matching
@@ -92,7 +92,7 @@ Ambient feature, accessible from either profile. **No separate broker account ty
   amount/%, date) both sides can reference in a dispute. *(Prototype: Broker Link → "Commission
   snapshot · IMMUTABLE".)*
 - A broker's dispute flag triggers a **48-hour notice** to the landlord before it affects their
-  public reliability score — not an instant, irreversible penalty.
+  assets reliability score — not an instant, irreversible penalty.
 - Brokers can flag a concern on a deal that **fell through before closing**, not only completed deals.
 - *Launch recommendation (not code):* hand-vet and onboard the first ~20 brokers to seed a
   trustworthy track record before opening the marketplace broadly.

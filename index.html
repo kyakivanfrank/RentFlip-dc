@@ -134,7 +134,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
    Splash — now shown at every width (scales with the viewport)
    ========================================================================== */
 .gd-splash{position:fixed;inset:0;z-index:200;background:var(--gd-green);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.gd-splash__pattern{position:absolute;inset:0;background-image:url('public/images/logo/pencilbg.svg');background-repeat:repeat;background-size:420px;opacity:.12}
+.gd-splash__pattern{position:absolute;inset:0;background-image:url('assets/images/logo/pencilbg.svg');background-repeat:repeat;background-size:420px;opacity:.12}
 .gd-splash__logo{position:relative;z-index:1;width:min(280px,62vw);animation:gd-rise .9s cubic-bezier(.2,.7,.2,1) both}
 @media (min-width:768px){ .gd-splash__pattern{background-size:800px} }
 
@@ -580,7 +580,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
 <sc-if value="{{ splashOn }}" hint-placeholder-val="{{ true }}">
 <div onClick="{{ hideSplash }}" class="gd-splash">
   <div class="gd-splash__pattern"></div>
-  <img src="public/images/logo/logo.svg" alt="Greendale Education Services" class="gd-splash__logo">
+  <img src="assets/images/logo/logo.svg" alt="Greendale Education Services" class="gd-splash__logo">
 </div>
 </sc-if>
 
@@ -588,7 +588,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
 <header class="gd-header">
   <div class="gd-header__inner">
     <a href="#top" class="gd-logo">
-      <span class="gd-logo__box"><img src="public/images/logo/logo.svg" alt="Greendale Education Services" class="gd-logo__img"></span>
+      <span class="gd-logo__box"><img src="assets/images/logo/logo.svg" alt="Greendale Education Services" class="gd-logo__img"></span>
       <span class="gd-logo__name">Greendale<span class="gd-logo__sub">Education Services</span></span>
     </a>
     <div class="gd-header__actions">
@@ -634,13 +634,13 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
   <div class="gd-nav__aside">
     <figure class="gd-nav__card">
       <div class="gd-nav__card-frame">
-        <img src="public/images/menu/admissions-card.jpg" alt="Admissions at Greendale">
+        <img src="assets/images/menu/admissions-card.jpg" alt="Admissions at Greendale">
       </div>
       <div style="margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
         <span style="font-family:'Young Serif',Georgia,serif;font-size:22px">Begin your journey</span>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01914C" stroke-width="2" stroke-linecap="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
       </div>
-      <figcaption class="gd-mono">public/images/menu/admissions-card.jpg</figcaption>
+      <figcaption class="gd-mono">assets/images/menu/admissions-card.jpg</figcaption>
     </figure>
   </div>
 </nav>
@@ -650,7 +650,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
 <section id="top" data-screen-label="Hero" class="gd-hero">
   <div id="gd-hero-media" class="gd-hero__media">
     <!-- Landscape cut is the default; swap to the portrait cut below 768px at build time. -->
-    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" data-video-src="public/videos/hero-background.mp4" data-video-src-portrait="public/videos/hero-background-portrait.mp4"></video>
+    <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop" data-video-src="assets/videos/hero-background.mp4" data-video-src-portrait="assets/videos/hero-background-portrait.mp4"></video>
     <div class="gd-hero__scrim"></div>
   </div>
   <div class="gd-hero__inner">
@@ -695,8 +695,8 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
         <p data-reveal data-delay="160" class="gd-body" style="margin-top:18px;color:rgba(17,106,58,.9)">For over 7 years Greendale has grown from a humble nursery into a comprehensive primary school — a model school raising innovative, academically excellent and self-reliant leaders, in a stimulating and colourful learning environment.</p>
       </div>
       <figure data-reveal data-delay="220">
-        <img src="public/images/opportunities-bg.jpeg" alt="Greendale illustration" class="gd-intro__img">
-        <figcaption class="gd-mono">public/images/opportunities-bg.jpeg</figcaption>
+        <img src="assets/images/opportunities-bg.jpeg" alt="Greendale illustration" class="gd-intro__img">
+        <figcaption class="gd-mono">assets/images/opportunities-bg.jpeg</figcaption>
       </figure>
     </div>
     <div class="gd-intro__stats">
@@ -727,7 +727,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
         <div class="gd-story__frame">
           <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1400&auto=format&fit=crop" alt="Placeholder for founder photograph">
         </div>
-        <figcaption class="gd-mono">public/images/about/founder.jpg — replace placeholder</figcaption>
+        <figcaption class="gd-mono">assets/images/about/founder.jpg — replace placeholder</figcaption>
       </figure>
       <div>
         <h2 data-reveal data-delay="120" class="gd-h2 gd-story__h">Started by educators who wanted a school they would send their own children to.</h2>
@@ -775,7 +775,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
     <button onClick="{{ openNursery }}" data-reveal class="gd-card">
       <figure class="gd-card__fig">
         <img src="https://picsum.photos/seed/gd-nursery/900/760" alt="Nursery section placeholder">
-        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">public/images/programs/nursery.jpg</figcaption>
+        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">assets/images/programs/nursery.jpg</figcaption>
       </figure>
       <div class="gd-card__body">
         <div class="gd-card__kicker">Early childhood education</div>
@@ -789,7 +789,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
     <button onClick="{{ openLower }}" data-reveal data-delay="90" class="gd-card">
       <figure class="gd-card__fig">
         <img src="https://picsum.photos/seed/gd-lower/900/760" alt="Lower primary placeholder">
-        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">public/images/programs/lower-primary.jpg</figcaption>
+        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">assets/images/programs/lower-primary.jpg</figcaption>
       </figure>
       <div class="gd-card__body">
         <div class="gd-card__kicker">Foundational learning</div>
@@ -803,7 +803,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
     <button onClick="{{ openUpper }}" data-reveal data-delay="180" class="gd-card">
       <figure class="gd-card__fig">
         <div class="gd-card__ph"><span>Photo needed</span></div>
-        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">public/images/programs/upper-primary.jpg</figcaption>
+        <figcaption class="gd-mono gd-mono--light" style="padding:6px 18px 0">assets/images/programs/upper-primary.jpg</figcaption>
       </figure>
       <div class="gd-card__body">
         <div class="gd-card__kicker">Preparing for the future</div>
@@ -1051,7 +1051,7 @@ h1,h2,h3,h4{font-family:var(--gd-serif);font-weight:400}
   <div class="gd-wrap">
     <div class="gd-footer__top">
       <div>
-        <div class="gd-footer__logo"><img src="public/images/logo/logo.svg" alt="Greendale Education Services"></div>
+        <div class="gd-footer__logo"><img src="assets/images/logo/logo.svg" alt="Greendale Education Services"></div>
         <p class="gd-footer__tag">Nurturing tomorrow's leaders today.</p>
       </div>
       <div class="gd-footer__cta">
@@ -1358,7 +1358,7 @@ class Component extends DCLogic {
         open: open({
           kicker: t.meta, title: t.name, body: t.quote,
           body2: t.kind === "video" ? "Video testimonial — plays here once the recorded clip is supplied." : "Written testimonial. Confirm consent and the child's grade before publishing.",
-          hasFrame: t.kind === "video", frameLabel: "public/videos/testimonials/zubeda.mp4", hasForm: false
+          hasFrame: t.kind === "video", frameLabel: "assets/videos/testimonials/zubeda.mp4", hasForm: false
         })
       })),
 
@@ -1377,37 +1377,37 @@ class Component extends DCLogic {
         kicker: "Gallery", title: "Media lightbox",
         body: "Every photograph and clip on the site opens in this one lightbox — classroom candids, co-curricular activities, campus, sport and transport.",
         body2: "The full gallery page filters the same library by category and is deep-linkable, so a category can be shared directly.",
-        hasFrame: true, frameLabel: "public/images/gallery/<category>/<file>.jpg", hasForm: false
+        hasFrame: true, frameLabel: "assets/images/gallery/<category>/<file>.jpg", hasForm: false
       }),
       openNursery: program("Early childhood education", "Nursery Section", "Baby Class to Top Class",
         "Play-based learning in small groups: language and pre-reading, numbers, music, art and outdoor play, with a class teacher and an assistant in every room.",
         "Daily rhythm: arrival and circle time, two learning blocks, hot mid-morning porridge, outdoor play, lunch and a rest period before home time.",
-        "public/images/programs/nursery.jpg"),
+        "assets/images/programs/nursery.jpg"),
       openLower: program("Foundational learning", "Lower Primary", "Primary 1 to Primary 3",
         "Literacy and numeracy are the backbone: English, Mathematics, Literacy I and II, Religious Education and Creative Arts, with continuous assessment.",
         "Co-curricular for this age group: choir, swimming, athletics and the reading club.",
-        "public/images/programs/lower-primary.jpg"),
+        "assets/images/programs/lower-primary.jpg"),
       openUpper: program("Preparing for the future", "Upper Primary", "Primary 4 to Primary 6",
         "English, Mathematics, Science and Social Studies with weekly written assessment and remedial support, preparing learners for national examinations.",
         "Co-curricular for this age group: debate, science club, football, netball and leadership through the prefect system.",
-        "public/images/programs/upper-primary.jpg"),
+        "assets/images/programs/upper-primary.jpg"),
 
-      openStaff1: staffBio("School administration", "Head Teacher", "Leads the academic programme and staff development, and meets every new family personally before enrolment.", "public/images/staff/head-teacher.jpg"),
-      openStaff2: staffBio("Academics", "Deputy Head Teacher", "Oversees the timetable, continuous assessment and remedial support across the primary section.", "public/images/staff/deputy.jpg"),
-      openStaff3: staffBio("Early childhood", "Nursery Coordinator", "Trained in early childhood development; runs the nursery section and the parent orientation days.", "public/images/staff/nursery-coordinator.jpg"),
-      openStaff4: staffBio("Enrolment support", "Admissions Desk", "First point of contact for forms, requirements, fees and school tours.", "public/images/staff/admissions.jpg"),
+      openStaff1: staffBio("School administration", "Head Teacher", "Leads the academic programme and staff development, and meets every new family personally before enrolment.", "assets/images/staff/head-teacher.jpg"),
+      openStaff2: staffBio("Academics", "Deputy Head Teacher", "Oversees the timetable, continuous assessment and remedial support across the primary section.", "assets/images/staff/deputy.jpg"),
+      openStaff3: staffBio("Early childhood", "Nursery Coordinator", "Trained in early childhood development; runs the nursery section and the parent orientation days.", "assets/images/staff/nursery-coordinator.jpg"),
+      openStaff4: staffBio("Enrolment support", "Admissions Desk", "First point of contact for forms, requirements, fees and school tours.", "assets/images/staff/admissions.jpg"),
 
       openStory: open({
         kicker: "Our story", title: "How Greendale started",
         body: "Greendale Education Services opened in 2019 as a single nursery class on Kimera Road in Kasubi, started by career teachers who wanted a school built around the child rather than the enrolment number. Word travelled through the neighbourhood, a second class followed, then a primary section.",
         body2: "Today the school runs a continuous ladder from Baby Class to Primary 6 in Kasubi–Rubaga Division, holding to the founding idea: small classes, teachers who know every child, and a God-fearing environment where academic excellence and moral integrity are taught together.",
-        hasFrame: true, frameLabel: "public/images/about/founders-early-years.jpg", hasForm: false
+        hasFrame: true, frameLabel: "assets/images/about/founders-early-years.jpg", hasForm: false
       }),
       openFilm: open({
         kicker: "School film", title: "A day at Greendale",
-        body: "The hero film plays here in full. Drop the edited clip at public/videos/hero-background.mp4 and it runs both as the hero background and in this modal.",
-        body2: "On phones the portrait cut at public/videos/hero-background-portrait.mp4 is used instead so the frame is not cropped.",
-        hasFrame: true, frameLabel: "public/videos/hero-background.mp4", hasForm: false
+        body: "The hero film plays here in full. Drop the edited clip at assets/videos/hero-background.mp4 and it runs both as the hero background and in this modal.",
+        body2: "On phones the portrait cut at assets/videos/hero-background-portrait.mp4 is used instead so the frame is not cropped.",
+        hasFrame: true, frameLabel: "assets/videos/hero-background.mp4", hasForm: false
       }),
       openInquiry: open({
         kicker: "Quick inquiry", title: "Ask the admissions office",

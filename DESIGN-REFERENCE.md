@@ -389,36 +389,36 @@ Input style: 2px green border, white bg, 14px padding, inherit font, green text,
 
 | Path | Type | Used in |
 |---|---|---|
-| `public/images/logo/logo.svg` | SVG | Header, splash, footer (both views) |
-| `public/images/logo/pencilbg.svg` | SVG | Splash screen background pattern (desktop) |
-| `public/images/menu/admissions-card.jpg` | JPG | Nav overlay right panel (desktop) |
-| `public/images/opportunities-bg.jpeg` | JPEG | Intro section illustration (both views) |
+| `assets/images/logo/logo.svg` | SVG | Header, splash, footer (both views) |
+| `assets/images/logo/pencilbg.svg` | SVG | Splash screen background pattern (desktop) |
+| `assets/images/menu/admissions-card.jpg` | JPG | Nav overlay right panel (desktop) |
+| `assets/images/opportunities-bg.jpeg` | JPEG | Intro section illustration (both views) |
 
 ### Needed Assets (placeholders in design) ⚠️
 
 | Path | Type | Section |
 |---|---|---|
-| `public/images/about/founder.jpg` | JPG | Our Story — founder portrait |
-| `public/images/about/founders-early-years.jpg` | JPG | Our Story modal frame |
-| `public/images/programs/nursery.jpg` | JPG | Program card — Nursery |
-| `public/images/programs/lower-primary.jpg` | JPG | Program card — Lower Primary |
-| `public/images/programs/upper-primary.jpg` | JPG | Program card — Upper Primary |
-| `public/images/gallery/classrooms/01.jpg` | JPG | Gallery — Top Class literacy |
-| `public/images/gallery/classrooms/02.jpg` | JPG | Gallery — P3 mathematics |
-| `public/images/gallery/cca/swimming.jpg` | JPG | Gallery — Swimming CCA |
-| `public/images/gallery/cca/tug-of-war.jpg` | JPG | Gallery — Tug of war |
-| `public/images/gallery/cca/mdd.jpg` | JPG | Gallery — Music, dance and drama |
-| `public/images/gallery/campus/compound.jpg` | JPG | Gallery — The compound at break |
-| `public/images/staff/head-teacher.jpg` | JPG | Staff card |
-| `public/images/staff/deputy.jpg` | JPG | Staff card |
-| `public/images/staff/nursery-coordinator.jpg` | JPG | Staff card |
-| `public/images/staff/admissions.jpg` | JPG | Staff card (desktop only) |
-| `public/images/transport/van-exterior.jpg` | JPG | Transport carousel slide 1 |
-| `public/images/transport/van-interior.jpg` | JPG | Transport carousel slide 2 |
-| `public/images/transport/safety.jpg` | JPG | Transport carousel slide 3 |
-| `public/videos/hero-background.mp4` | MP4 | Hero section (desktop) |
-| `public/videos/hero-background-portrait.mp4` | MP4 | Hero section (mobile) |
-| `public/videos/testimonials/zubeda.mp4` | MP4 | Zubeda N. video testimonial |
+| `assets/images/about/founder.jpg` | JPG | Our Story — founder portrait |
+| `assets/images/about/founders-early-years.jpg` | JPG | Our Story modal frame |
+| `assets/images/programs/nursery.jpg` | JPG | Program card — Nursery |
+| `assets/images/programs/lower-primary.jpg` | JPG | Program card — Lower Primary |
+| `assets/images/programs/upper-primary.jpg` | JPG | Program card — Upper Primary |
+| `assets/images/gallery/classrooms/01.jpg` | JPG | Gallery — Top Class literacy |
+| `assets/images/gallery/classrooms/02.jpg` | JPG | Gallery — P3 mathematics |
+| `assets/images/gallery/cca/swimming.jpg` | JPG | Gallery — Swimming CCA |
+| `assets/images/gallery/cca/tug-of-war.jpg` | JPG | Gallery — Tug of war |
+| `assets/images/gallery/cca/mdd.jpg` | JPG | Gallery — Music, dance and drama |
+| `assets/images/gallery/campus/compound.jpg` | JPG | Gallery — The compound at break |
+| `assets/images/staff/head-teacher.jpg` | JPG | Staff card |
+| `assets/images/staff/deputy.jpg` | JPG | Staff card |
+| `assets/images/staff/nursery-coordinator.jpg` | JPG | Staff card |
+| `assets/images/staff/admissions.jpg` | JPG | Staff card (desktop only) |
+| `assets/images/transport/van-exterior.jpg` | JPG | Transport carousel slide 1 |
+| `assets/images/transport/van-interior.jpg` | JPG | Transport carousel slide 2 |
+| `assets/images/transport/safety.jpg` | JPG | Transport carousel slide 3 |
+| `assets/videos/hero-background.mp4` | MP4 | Hero section (desktop) |
+| `assets/videos/hero-background-portrait.mp4` | MP4 | Hero section (mobile) |
+| `assets/videos/testimonials/zubeda.mp4` | MP4 | Zubeda N. video testimonial |
 
 ---
 
